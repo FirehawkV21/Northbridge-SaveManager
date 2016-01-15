@@ -239,22 +239,20 @@ namespace NorthbridgeSubSystem
             var args = Environment.GetCommandLineArgs();
             foreach (var arg in args)
             {
-                if (arg != "-NBSettings")
+                if (arg == "-NBSettings") continue;
+                if (!File.Exists(PlayerFile) || !File.Exists(RgssLib) || !File.Exists(GameFile))
                 {
-                    if (!File.Exists(PlayerFile) || !File.Exists(RgssLib) || !File.Exists(GameFile))
-                    {
-                        MessageBox.Show(@"Missing file(s). Aborting.");
-                        Close();
-                    }
-                    else
-                    {
-                        Hide();
-                        _gameProcess.StartInfo = _gameInfo;
-                        _gameProcess.Start();
-                        _gameProcess.WaitForExit();
-                        if (Settings.Default.AutoBackupEnabled) AutoBackupCode();
-                        Close();
-                    }
+                    MessageBox.Show(@"Missing file(s). Aborting.");
+                    Close();
+                }
+                else
+                {
+                    Hide();
+                    _gameProcess.StartInfo = _gameInfo;
+                    _gameProcess.Start();
+                    _gameProcess.WaitForExit();
+                    if (Settings.Default.AutoBackupEnabled) AutoBackupCode();
+                    Close();
                 }
             }
         }

@@ -5,9 +5,9 @@ namespace OpenSettings
 {
     static class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Process.Start("NorthbridgeSubsystem.exe", "-NBSettings");
+            Process.Start("NorthbridgeSubsystem.exe","-NBSettings");
             Environment.Exit(0);
         }
     }
