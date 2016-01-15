@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using NorthbridgeSubSystem.Properties;
 
@@ -236,25 +237,22 @@ namespace NorthbridgeSubSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var args = Environment.GetCommandLineArgs();
-            foreach (var arg in args)
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.Contains("-NBSetup")) return;
+            if (!File.Exists(PlayerFile) || !File.Exists(RgssLib) || !File.Exists(GameFile))
             {
-                if (arg == "-NBSettings") continue;
-                if (!File.Exists(PlayerFile) || !File.Exists(RgssLib) || !File.Exists(GameFile))
-                {
-                    MessageBox.Show(@"Missing file(s). Aborting.");
-                    Close();
-                }
-                else
-                {
-                    Hide();
-                    _gameProcess.StartInfo = _gameInfo;
-                    _gameProcess.Start();
-                    _gameProcess.WaitForExit();
-                    if (Settings.Default.AutoBackupEnabled) AutoBackupCode();
-                    Close();
-                }
+                MessageBox.Show(@"Missing file(s). Aborting.");
+                Close();
+            }
+            else
+            {
+                Hide();
+                _gameProcess.StartInfo = _gameInfo;
+                _gameProcess.Start();
+                _gameProcess.WaitForExit();
+                if (Settings.Default.AutoBackupEnabled) AutoBackupCode();
+                Close();
             }
         }
+        }
     }
-}
