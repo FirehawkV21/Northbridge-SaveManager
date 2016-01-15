@@ -12,7 +12,9 @@ namespace NorthbridgeSubSystem
         private static readonly string RgssLib = Application.StartupPath + "\\System\\RGSS301.dll";
         private static readonly string GameFile = Application.StartupPath + "\\Game.rgss3a";
         private static readonly string PlayerFile = Application.StartupPath + "\\Game.exe";
-        private readonly ProcessStartInfo _gameInfo = new ProcessStartInfo("Game.exe");
+        private static readonly string SaveFileExtension = "*.rvdata2";
+        private static readonly string SaveFilename = "Save";
+        private readonly ProcessStartInfo _gameInfo = new ProcessStartInfo(PlayerFile);
         private readonly Process _gameProcess = new Process();
 
         public Form1()
@@ -225,7 +227,7 @@ namespace NorthbridgeSubSystem
 
         private static void AutoBackupCode()
         {
-            var areSavesAvaliable = Directory.GetFiles(SaveLocation, "Save*.rvdata2").Length > 0;
+            var areSavesAvaliable = Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0;
             if (areSavesAvaliable)
                 DirectoryCopy(SaveLocation,
                     Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm") + "\\",

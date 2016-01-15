@@ -10,3 +10,6 @@ c:\users\acemo\onedrive\έγγραφα\visual studio 2015\Projects\WindowsFormsA
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\Northbridge-SaveManager\bin\Debug\NorthbridgeSubsystem.exe.config
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\Northbridge-SaveManager\obj\Debug\NorthbridgeSubsystem.exe
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\Northbridge-SaveManager\obj\Debug\NorthbridgeSubsystem.pdb
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Debug\NorthbridgeSubsystem.exe.config
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Debug\NorthbridgeSubsystem.exe
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Debug\NorthbridgeSubsystem.pdb

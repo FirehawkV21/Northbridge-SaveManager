@@ -1,0 +1,6 @@
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\bin\Release\OpenSettings.exe.config
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\bin\Release\OpenSettings.exe
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\bin\Release\OpenSettings.pdb
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\obj\Release\OpenSettings.csprojResolveAssemblyReference.cache
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\obj\Release\OpenSettings.exe
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\obj\Release\OpenSettings.pdb
