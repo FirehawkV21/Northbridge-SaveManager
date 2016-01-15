@@ -1,2 +1,2 @@
-# Backup and Restore Module for RM Games.
+# Northbridge Save Manager Subsystem
 A small bootstrap program to enable backup and restore of save files on RPG Maker games.
