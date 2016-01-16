@@ -9,7 +9,7 @@ namespace NorthbridgeSubSystem
 {
     public partial class Form1 : Form
     {
-        private static readonly string SaveLocation = Application.StartupPath;
+        private static readonly string SaveLocation = Application.StartupPath + "\\Saves\\";
         private static readonly string RgssLib = Application.StartupPath + "\\System\\RGSS301.dll";
         private static readonly string GameFile = Application.StartupPath + "\\Game.rgss3a";
         private static readonly string PlayerFile = Application.StartupPath + "\\Game.exe";
@@ -56,11 +56,11 @@ namespace NorthbridgeSubSystem
                 var backupFolder = Settings.Default.AutoBackupLocation;
                 Directory.Delete(backupFolder, true);
                 Directory.CreateDirectory(backupFolder);
-                DeleteCompleteLabel.Visible = true;
+                BackupDeleteCompleteLabel.Visible = true;
             }
             catch (Exception)
             {
-                DeleteFailedLabel.Visible = true;
+                DeleteBackupsFailed.Visible = true;
             }
         }
 
@@ -106,6 +106,7 @@ namespace NorthbridgeSubSystem
             DeleteBackupCheckBox.Enabled = AutoBackupCheckbox.Checked;
             TestBackupButton.Enabled = AutoBackupCheckbox.Checked;
             LocationBackup.Text = Settings.Default.AutoBackupLocation;
+            RestoreBackupButton.Enabled = AutoBackupCheckbox.Checked;
             Settings.Default.Save();
         }
 
@@ -229,7 +230,8 @@ namespace NorthbridgeSubSystem
         private static void AutoBackupCode()
         {
             var areSavesAvaliable = Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0;
-            if (areSavesAvaliable)
+            if (!areSavesAvaliable) return;
+            if (!Directory.Exists(Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm")))
                 DirectoryCopy(SaveLocation,
                     Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm") + "\\",
                     true);
@@ -238,6 +240,8 @@ namespace NorthbridgeSubSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] args = Environment.GetCommandLineArgs();
+            AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
+            LocationBackup.Text = Settings.Default.AutoBackupLocation;
             if (args.Contains("-NBSetup")) return;
             if (!File.Exists(PlayerFile) || !File.Exists(RgssLib) || !File.Exists(GameFile))
             {

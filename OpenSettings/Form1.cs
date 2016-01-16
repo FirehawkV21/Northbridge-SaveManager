@@ -15,7 +15,7 @@ namespace OpenSettings
         {
             var startInfo = new ProcessStartInfo
             {
-                FileName = Application.StartupPath + "NorthbridgeSubsystem.exe",
+                FileName = Application.StartupPath + "\\NorthbridgeSubsystem.exe",
                 Arguments = "-NBSetup"
             };
             Process.Start(startInfo);
