@@ -9,12 +9,21 @@ namespace NorthbridgeSubSystem
 {
     public partial class Form1 : Form
     {
+        //Initialising a few static variables here. Add anything you want the executable to access frequently here as variables.
+        
+        //Location of the Save folder.
         private static readonly string SaveLocation = Application.StartupPath + "\\Saves\\";
+        //Location of the RGSS Library (RMXP/RMVX/RMVXA).
         private static readonly string RgssLib = Application.StartupPath + "\\System\\RGSS301.dll";
+        //Location of the Game file (RMXP/RMVX/RMVXA).
         private static readonly string GameFile = Application.StartupPath + "\\Game.rgss3a";
+        //Location of the game executable.
         private static readonly string PlayerFile = Application.StartupPath + "\\Game.exe";
+        //Set the extension of the save file.
         private static readonly string SaveFileExtension = "*.rvdata2";
+        //The name of the save file. Usualy they are SaveXX.
         private static readonly string SaveFilename = "Save";
+        //Initalise a structure that contains necessary info (such as arguments).
         private readonly ProcessStartInfo _gameInfo = new ProcessStartInfo(PlayerFile);
         private readonly Process _gameProcess = new Process();
 
@@ -163,10 +172,45 @@ namespace NorthbridgeSubSystem
             try
             {
                 if (SlotSelectCheckBox.Checked)
-                    File.Copy(ImportFilePicker.FileName, SaveLocation + "GameSave" + numericUpDown1.Value + ".isgsf");
+                {
+                    var i = 0;
+                    foreach (var fileName in ImportFilePicker.FileNames)
+                    {
+                        File.Copy(fileName, SaveLocation + @"\" + SaveFilename + (numericUpDown1.Value + i) + SaveFileExtension, true);
+                        i++;
+                    }
+                }
                 else
-                    File.Copy(ImportFilePicker.FileName, SaveLocation + ImportFilePicker.SafeFileName, true);
-                ExportButton.Enabled = Directory.GetFiles(SaveLocation, "*.isgsf").Length > 0;
+                    foreach (var fileName in ImportFilePicker.FileNames)
+                    {
+                        File.Copy(fileName, SaveLocation + @"\" + Path.GetFileName(fileName), true);
+                    }
+                if (Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0)
+                {
+                    ExportButton.Enabled = true;
+                    SelectiveExportButton.Enabled = true;
+                    AutoBackupCheckbox.Enabled = true;
+                    LocationBackup.Enabled = AutoBackupCheckbox.Checked;
+                    DeleteAllSavesCheckBox.Enabled = true;
+                    DeleteButton.Enabled = DeleteAllSavesCheckBox.Checked;
+                    TestBackupButton.Enabled = AutoBackupCheckbox.Checked;
+                    RestoreBackupButton.Enabled = AutoBackupCheckbox.Checked;
+                    DeleteBackupCheckBox.Enabled = AutoBackupCheckbox.Checked;
+                    DeleteBackupButton.Enabled = DeleteBackupCheckBox.Checked;
+                }
+                else
+                {
+                    ExportButton.Enabled = false;
+                    SelectiveExportButton.Enabled = false;
+                    AutoBackupCheckbox.Enabled = false;
+                    LocationBackup.Enabled = false;
+                    DeleteAllSavesCheckBox.Enabled = false;
+                    DeleteButton.Enabled = false;
+                    TestBackupButton.Enabled = false;
+                    RestoreBackupButton.Enabled = false;
+                    DeleteBackupCheckBox.Enabled = false;
+                    DeleteBackupButton.Enabled = false;
+                }
                 ImportCompleteLabel.Visible = true;
             }
             catch (Exception)
@@ -214,7 +258,7 @@ namespace NorthbridgeSubSystem
             }
 
             // If copySubDirs is true, copy the subdirectories.
-            if (copySubDirs)
+            if (!copySubDirs) return;
             {
                 foreach (var subdir in dirs)
                 {
@@ -239,10 +283,11 @@ namespace NorthbridgeSubSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Initialises an array were all arguments passed to this executable are saved.
             string[] args = Environment.GetCommandLineArgs();
-            AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
-            LocationBackup.Text = Settings.Default.AutoBackupLocation;
+            //Checks if the argument to call the UI is present. If not, launch the game.
             if (args.Contains("-NBSetup")) return;
+            //Checks if the files set in lines 12 - 19 are present. Adjust this accordingly.
             if (!File.Exists(PlayerFile) || !File.Exists(RgssLib) || !File.Exists(GameFile))
             {
                 MessageBox.Show(@"Missing file(s). Aborting.");
@@ -251,12 +296,85 @@ namespace NorthbridgeSubSystem
             else
             {
                 Hide();
+                //Any arguments for the game executable (set in this executable's code) are loaded.
+                //So, for example you pass the arguments --LoadFile <file> via code, this will happen:
+                // Run "<Game Folder>\Game.exe" --LoadFile <file>
+                // Set these with _gameInfo.Arguments = "argument1 argument2";
                 _gameProcess.StartInfo = _gameInfo;
+                //Start the game.
                 _gameProcess.Start();
+                //Wait for the game to close before closing Northbridge.
                 _gameProcess.WaitForExit();
+                //Calls the Auto-Backup code.
                 if (Settings.Default.AutoBackupEnabled) AutoBackupCode();
                 Close();
             }
+            AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
+            LocationBackup.Text = Settings.Default.AutoBackupLocation;
+            if (!Directory.Exists(SaveLocation))
+            {
+                Directory.CreateDirectory(SaveLocation);
+                ExportButton.Enabled = false;
+                SelectiveExportButton.Enabled = false;
+                AutoBackupCheckbox.Enabled = false;
+                LocationBackup.Enabled = false;
+                DeleteAllSavesCheckBox.Enabled = false;
+                DeleteButton.Enabled = false;
+                TestBackupButton.Enabled = false;
+                RestoreBackupButton.Enabled = false;
+                DeleteBackupCheckBox.Enabled = false;
+                DeleteBackupButton.Enabled = false;
+            }
+            else
+            if (Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0)
+            {
+                ExportButton.Enabled = true;
+                SelectiveExportButton.Enabled = true;
+                AutoBackupCheckbox.Enabled = true;
+                LocationBackup.Enabled = AutoBackupCheckbox.Checked;
+                DeleteAllSavesCheckBox.Enabled = true;
+                DeleteButton.Enabled = DeleteAllSavesCheckBox.Checked;
+                TestBackupButton.Enabled = AutoBackupCheckbox.Checked;
+                RestoreBackupButton.Enabled = AutoBackupCheckbox.Checked;
+                DeleteBackupCheckBox.Enabled = AutoBackupCheckbox.Checked;
+                DeleteBackupButton.Enabled = DeleteBackupCheckBox.Checked;
+            }
+            else
+            {
+                ExportButton.Enabled = false;
+                SelectiveExportButton.Enabled = false;
+                AutoBackupCheckbox.Enabled = false;
+                LocationBackup.Enabled = false;
+                DeleteAllSavesCheckBox.Enabled = false;
+                DeleteButton.Enabled = false;
+                TestBackupButton.Enabled = false;
+                RestoreBackupButton.Enabled = false;
+                DeleteBackupCheckBox.Enabled = false;
+                DeleteBackupButton.Enabled = false;
+            }
         }
+
+        private void SelectiveExportButton_Click(object sender, EventArgs e)
+        {
+            ExportFilePicker.InitialDirectory = SaveLocation;
+            ExportCompleteLabel.Visible = false;
+            ExportFailedLabel.Visible = false;
+            var seli = ExportFilePicker.ShowDialog();
+            if (seli != DialogResult.OK) return;
+            var eli = ExportFolderDialog.ShowDialog();
+            if (eli != DialogResult.OK) return;
+            try
+            {
+                foreach (var fileName in ExportFilePicker.SafeFileNames)
+                {
+                    File.Copy(SaveLocation + "\\" + Path.GetFileName(fileName), ExportFolderDialog.SelectedPath + "\\" + Path.GetFileName(fileName), true);
+                }
+                ExportCompleteLabel.Visible = true;
+            }
+            catch (Exception)
+            {
+                ExportFailedLabel.Visible = true;
+            }
         }
+    }
     }

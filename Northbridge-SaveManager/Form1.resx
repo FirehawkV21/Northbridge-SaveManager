@@ -142,7 +142,7 @@
     <value>NoControl</value>
   </data>
   <data name="RestoreFailedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 92</value>
+    <value>6, 92</value>
   </data>
   <data name="RestoreFailedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 13</value>
@@ -376,7 +376,7 @@
     <value>NoControl</value>
   </data>
   <data name="DeleteBackupCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 91</value>
+    <value>10, 91</value>
   </data>
   <data name="DeleteBackupCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 17</value>
@@ -975,6 +975,33 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="SelectiveExportButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectiveExportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>445, 42</value>
+  </data>
+  <data name="SelectiveExportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 23</value>
+  </data>
+  <data name="SelectiveExportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="SelectiveExportButton.Text" xml:space="preserve">
+    <value>Selective Export</value>
+  </data>
+  <data name="&gt;&gt;SelectiveExportButton.Name" xml:space="preserve">
+    <value>SelectiveExportButton</value>
+  </data>
+  <data name="&gt;&gt;SelectiveExportButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectiveExportButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;SelectiveExportButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ExportFailedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -982,7 +1009,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ExportFailedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 47</value>
+    <value>368, 47</value>
   </data>
   <data name="ExportFailedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
@@ -1006,7 +1033,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;ExportFailedLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ExportCompleteLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1015,7 +1042,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ExportCompleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 47</value>
+    <value>352, 47</value>
   </data>
   <data name="ExportCompleteLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -1039,7 +1066,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;ExportCompleteLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ExportButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1066,7 +1093,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;ExportButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1096,7 +1123,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1403,28 +1430,40 @@ WARNING! This will replace the save file with the same name.</value>
     <value>0</value>
   </data>
   <metadata name="ImportFilePicker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>630, 17</value>
+    <value>17, 17</value>
   </metadata>
   <data name="ImportFilePicker.Filter" xml:space="preserve">
     <value>RMVXA Save File|Save*.rvdata2</value>
   </data>
   <metadata name="ExportFolderDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>156, 17</value>
   </metadata>
   <metadata name="BackupFolderPicker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>173, 56</value>
+    <value>312, 17</value>
   </metadata>
   <data name="BackupFolderPicker.Description" xml:space="preserve">
     <value>Where shall I back up you save files to?</value>
   </data>
   <metadata name="RestoreFolderPicker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>331, 56</value>
+    <value>470, 17</value>
   </metadata>
   <data name="RestoreFolderPicker.Description" xml:space="preserve">
     <value>Select the folder of the backup you want to restore. Their name is something like this: BackupYYYYMMDDHHmm.</value>
   </data>
+  <metadata name="ExportFilePicker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>630, 17</value>
+  </metadata>
+  <data name="ExportFilePicker.Filter" xml:space="preserve">
+    <value>Immortal Sins Save File|GameSave*.isgsf</value>
+  </data>
+  <data name="ExportFilePicker.Title" xml:space="preserve">
+    <value>Select the files to export (WARNING: DO NOT LEAVE THE FOLDER!)</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>43</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -1461,6 +1500,12 @@ WARNING! This will replace the save file with the same name.</value>
   </data>
   <data name="&gt;&gt;RestoreFolderPicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExportFilePicker.Name" xml:space="preserve">
+    <value>ExportFilePicker</value>
+  </data>
+  <data name="&gt;&gt;ExportFilePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

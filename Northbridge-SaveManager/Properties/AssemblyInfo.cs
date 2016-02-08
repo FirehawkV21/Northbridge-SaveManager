@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("A small program to enable additional capabilities to RPG Maker games.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AceOfAces")]
-[assembly: AssemblyProduct("WindowsFormsApplication2")]
+[assembly: AssemblyProduct("Nothbridge Subsystem")]
 [assembly: AssemblyCopyright("Copyright ©  2016 AceOfAces.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.2016.0115")]
-[assembly: AssemblyFileVersion("1.0.2016.0115")]
+[assembly: AssemblyVersion("1.02.2016.0208")]
+[assembly: AssemblyFileVersion("1.02.2016.0208")]
 [assembly: NeutralResourcesLanguage("en")]
 

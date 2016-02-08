@@ -74,6 +74,8 @@
             this.ExportFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.BackupFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
             this.RestoreFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
+            this.ExportFilePicker = new System.Windows.Forms.OpenFileDialog();
+            this.SelectiveExportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -134,11 +136,13 @@
             // RestoreFailedLabel
             // 
             resources.ApplyResources(this.RestoreFailedLabel, "RestoreFailedLabel");
+            this.RestoreFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.RestoreFailedLabel.Name = "RestoreFailedLabel";
             // 
             // RestoreCompleteLabel
             // 
             resources.ApplyResources(this.RestoreCompleteLabel, "RestoreCompleteLabel");
+            this.RestoreCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
             this.RestoreCompleteLabel.Name = "RestoreCompleteLabel";
             // 
             // RestoreBackupButton
@@ -167,11 +171,13 @@
             // DeleteBackupsFailed
             // 
             resources.ApplyResources(this.DeleteBackupsFailed, "DeleteBackupsFailed");
+            this.DeleteBackupsFailed.ForeColor = System.Drawing.Color.DarkRed;
             this.DeleteBackupsFailed.Name = "DeleteBackupsFailed";
             // 
             // BackupDeleteCompleteLabel
             // 
             resources.ApplyResources(this.BackupDeleteCompleteLabel, "BackupDeleteCompleteLabel");
+            this.BackupDeleteCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
             this.BackupDeleteCompleteLabel.Name = "BackupDeleteCompleteLabel";
             // 
             // DeleteBackupCheckBox
@@ -210,11 +216,13 @@
             // BackupFailedLabel
             // 
             resources.ApplyResources(this.BackupFailedLabel, "BackupFailedLabel");
+            this.BackupFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.BackupFailedLabel.Name = "BackupFailedLabel";
             // 
             // BackupCompleteLabel
             // 
             resources.ApplyResources(this.BackupCompleteLabel, "BackupCompleteLabel");
+            this.BackupCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
             this.BackupCompleteLabel.Name = "BackupCompleteLabel";
             // 
             // TestBackupButton
@@ -268,11 +276,13 @@
             // DeleteFailedLabel
             // 
             resources.ApplyResources(this.DeleteFailedLabel, "DeleteFailedLabel");
+            this.DeleteFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.DeleteFailedLabel.Name = "DeleteFailedLabel";
             // 
             // DeleteCompleteLabel
             // 
             resources.ApplyResources(this.DeleteCompleteLabel, "DeleteCompleteLabel");
+            this.DeleteCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
             this.DeleteCompleteLabel.Name = "DeleteCompleteLabel";
             // 
             // DeleteButton
@@ -296,6 +306,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.SelectiveExportButton);
             this.groupBox2.Controls.Add(this.ExportFailedLabel);
             this.groupBox2.Controls.Add(this.ExportCompleteLabel);
             this.groupBox2.Controls.Add(this.ExportButton);
@@ -307,11 +318,13 @@
             // ExportFailedLabel
             // 
             resources.ApplyResources(this.ExportFailedLabel, "ExportFailedLabel");
+            this.ExportFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.ExportFailedLabel.Name = "ExportFailedLabel";
             // 
             // ExportCompleteLabel
             // 
             resources.ApplyResources(this.ExportCompleteLabel, "ExportCompleteLabel");
+            this.ExportCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
             this.ExportCompleteLabel.Name = "ExportCompleteLabel";
             // 
             // ExportButton
@@ -368,11 +381,13 @@
             // ImportFailedLabel
             // 
             resources.ApplyResources(this.ImportFailedLabel, "ImportFailedLabel");
+            this.ImportFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.ImportFailedLabel.Name = "ImportFailedLabel";
             // 
             // ImportCompleteLabel
             // 
             resources.ApplyResources(this.ImportCompleteLabel, "ImportCompleteLabel");
+            this.ImportCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
             this.ImportCompleteLabel.Name = "ImportCompleteLabel";
             // 
             // ImportButton
@@ -406,6 +421,18 @@
             // RestoreFolderPicker
             // 
             resources.ApplyResources(this.RestoreFolderPicker, "RestoreFolderPicker");
+            // 
+            // ExportFilePicker
+            // 
+            resources.ApplyResources(this.ExportFilePicker, "ExportFilePicker");
+            this.ExportFilePicker.Multiselect = true;
+            // 
+            // SelectiveExportButton
+            // 
+            resources.ApplyResources(this.SelectiveExportButton, "SelectiveExportButton");
+            this.SelectiveExportButton.Name = "SelectiveExportButton";
+            this.SelectiveExportButton.UseVisualStyleBackColor = true;
+            this.SelectiveExportButton.Click += new System.EventHandler(this.SelectiveExportButton_Click);
             // 
             // Form1
             // 
@@ -491,6 +518,8 @@
         private System.Windows.Forms.FolderBrowserDialog ExportFolderDialog;
         private System.Windows.Forms.FolderBrowserDialog BackupFolderPicker;
         private System.Windows.Forms.FolderBrowserDialog RestoreFolderPicker;
+        private System.Windows.Forms.Button SelectiveExportButton;
+        private System.Windows.Forms.OpenFileDialog ExportFilePicker;
     }
 }
 
