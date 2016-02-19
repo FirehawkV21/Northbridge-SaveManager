@@ -46,5 +46,14 @@ namespace NorthbridgeSubSystem.Properties {
                 this["AutoBackupLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableWindowsFormsHighDpiAutoResizing {
+            get {
+                return ((bool)(this["EnableWindowsFormsHighDpiAutoResizing"]));
+            }
+        }
     }
 }
