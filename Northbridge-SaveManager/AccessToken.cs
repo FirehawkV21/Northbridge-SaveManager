@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NorthbridgeLauncher
+namespace NorthbridgeSubSystem
 {
     internal class AccessToken
     {

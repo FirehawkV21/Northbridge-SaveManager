@@ -18,10 +18,7 @@ namespace NorthbridgeSubSystem
         // invalid by the time this is published
         private const string ClientId = "0000000000000000";
 
-        private const string SignInUrl = @"https://login.live.com/
-         oauth20_authorize.srf?client_id={0}&redirect_uri=
-         https://login.live.com/oauth20_desktop.srf&response_type=
-         token&scope={1}";
+        private const string SignInUrl = @"https://login.live.com/oauth20_authorize.srf?client_id={0}&redirect_uri=https://login.live.com/oauth20_desktop.srf&response_type=token&scope={1}";
         private Timer _closeTimer;
         public AuthBrowser()
         {
