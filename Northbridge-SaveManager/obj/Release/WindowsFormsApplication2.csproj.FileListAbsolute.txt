@@ -1,9 +1,1 @@
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\NorthbridgeSubsystem.exe.config
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\NorthbridgeSubsystem.exe
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\NorthbridgeSubsystem.pdb
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\WindowsFormsApplication2.csprojResolveAssemblyReference.cache
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubSystem.Form1.resources
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubSystem.Properties.Resources.resources
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\WindowsFormsApplication2.csproj.GenerateResource.Cache
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubsystem.exe
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubsystem.pdb
