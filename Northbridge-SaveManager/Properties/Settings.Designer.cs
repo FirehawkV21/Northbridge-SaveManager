@@ -55,5 +55,17 @@ namespace NorthbridgeSubSystem.Properties {
                 return ((bool)(this["EnableWindowsFormsHighDpiAutoResizing"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableSnapshotMode {
+            get {
+                return ((bool)(this["EnableSnapshotMode"]));
+            }
+            set {
+                this["EnableSnapshotMode"] = value;
+            }
+        }
     }
 }

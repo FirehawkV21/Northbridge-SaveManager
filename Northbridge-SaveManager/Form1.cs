@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using NorthbridgeSubSystem.Properties;
 
@@ -296,6 +297,18 @@ namespace NorthbridgeSubSystem
             else
             {
                 Hide();
+                //Set up a watcher to monitor the save folder. The "*" is used for wild card.
+                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && Settings.Default.EnableSnapshotMode)
+                {
+                    var svw = new FileSystemWatcher
+                    {
+                        Path = SaveLocation,
+                        NotifyFilter = NotifyFilters.LastWrite,
+                        Filter = SaveFilename + @"*" + SaveFileExtension
+                    };
+                    svw.Changed += OnChanged;
+                    svw.EnableRaisingEvents = true;
+                }
                 //Any arguments for the game executable (set in this executable's code) are loaded.
                 //So, for example you pass the arguments --LoadFile <file> via code, this will happen:
                 // Run "<Game Folder>\Game.exe" --LoadFile <file>
@@ -306,7 +319,7 @@ namespace NorthbridgeSubSystem
                 //Wait for the game to close before closing Northbridge.
                 _gameProcess.WaitForExit();
                 //Calls the Auto-Backup code.
-                if (Settings.Default.AutoBackupEnabled) AutoBackupCode();
+                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && !Settings.Default.EnableSnapshotMode) AutoBackupCode();
                 Close();
             }
             AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
@@ -338,6 +351,7 @@ namespace NorthbridgeSubSystem
                 RestoreBackupButton.Enabled = AutoBackupCheckbox.Checked;
                 DeleteBackupCheckBox.Enabled = AutoBackupCheckbox.Checked;
                 DeleteBackupButton.Enabled = DeleteBackupCheckBox.Checked;
+                EnableSnapshotCheckbox.Enabled = AutoBackupCheckbox.Checked;
             }
             else
             {
@@ -351,6 +365,7 @@ namespace NorthbridgeSubSystem
                 RestoreBackupButton.Enabled = false;
                 DeleteBackupCheckBox.Enabled = false;
                 DeleteBackupButton.Enabled = false;
+                EnableSnapshotCheckbox.Enabled = false;
             }
         }
 
@@ -375,6 +390,11 @@ namespace NorthbridgeSubSystem
             {
                 ExportFailedLabel.Visible = true;
             }
+        }
+        private static void OnChanged(object source, FileSystemEventArgs e)
+        {
+            Thread.Sleep(60000);
+            AutoBackupCode();
         }
     }
     }

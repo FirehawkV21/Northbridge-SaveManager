@@ -58,6 +58,7 @@
             this.DeleteAllSavesCheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SelectiveExportButton = new System.Windows.Forms.Button();
             this.ExportFailedLabel = new System.Windows.Forms.Label();
             this.ExportCompleteLabel = new System.Windows.Forms.Label();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -75,7 +76,7 @@
             this.BackupFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
             this.RestoreFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
             this.ExportFilePicker = new System.Windows.Forms.OpenFileDialog();
-            this.SelectiveExportButton = new System.Windows.Forms.Button();
+            this.EnableSnapshotCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -201,6 +202,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.EnableSnapshotCheckbox);
             this.groupBox4.Controls.Add(this.BackupFailedLabel);
             this.groupBox4.Controls.Add(this.BackupCompleteLabel);
             this.groupBox4.Controls.Add(this.TestBackupButton);
@@ -315,6 +317,13 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
+            // SelectiveExportButton
+            // 
+            resources.ApplyResources(this.SelectiveExportButton, "SelectiveExportButton");
+            this.SelectiveExportButton.Name = "SelectiveExportButton";
+            this.SelectiveExportButton.UseVisualStyleBackColor = true;
+            this.SelectiveExportButton.Click += new System.EventHandler(this.SelectiveExportButton_Click);
+            // 
             // ExportFailedLabel
             // 
             resources.ApplyResources(this.ExportFailedLabel, "ExportFailedLabel");
@@ -427,12 +436,11 @@
             resources.ApplyResources(this.ExportFilePicker, "ExportFilePicker");
             this.ExportFilePicker.Multiselect = true;
             // 
-            // SelectiveExportButton
+            // EnableSnapshotCheckbox
             // 
-            resources.ApplyResources(this.SelectiveExportButton, "SelectiveExportButton");
-            this.SelectiveExportButton.Name = "SelectiveExportButton";
-            this.SelectiveExportButton.UseVisualStyleBackColor = true;
-            this.SelectiveExportButton.Click += new System.EventHandler(this.SelectiveExportButton_Click);
+            resources.ApplyResources(this.EnableSnapshotCheckbox, "EnableSnapshotCheckbox");
+            this.EnableSnapshotCheckbox.Name = "EnableSnapshotCheckbox";
+            this.EnableSnapshotCheckbox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -520,6 +528,7 @@
         private System.Windows.Forms.FolderBrowserDialog RestoreFolderPicker;
         private System.Windows.Forms.Button SelectiveExportButton;
         private System.Windows.Forms.OpenFileDialog ExportFilePicker;
+        private System.Windows.Forms.CheckBox EnableSnapshotCheckbox;
     }
 }
 
