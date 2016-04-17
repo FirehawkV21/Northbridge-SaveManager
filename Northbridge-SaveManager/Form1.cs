@@ -21,11 +21,18 @@ namespace NorthbridgeSubSystem
         //Location of the game executable.
         private static readonly string PlayerFile = Application.StartupPath + "\\Game.exe";
         //Set the extension of the save file.
-        private static readonly string SaveFileExtension = "*.rvdata2";
+        private const string SaveFileExtension = "*.rvdata2";
         //The name of the save file. Usualy they are SaveXX.
         private static readonly string SaveFilename = "Save";
         //Initalise a structure that contains necessary info (such as arguments).
         private readonly ProcessStartInfo _gameInfo = new ProcessStartInfo(PlayerFile);
+        //This is the format of the folder when the backup is executed.
+        private static readonly string BackupFolderSetup = Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm");
+        //How many seconds it will wait until a backup is issued (Snapshot Mode only).
+        private const int WaitTime = 60000;
+        //Interger used as a check for the backup system (Normal Mode only).
+        //If this interger is higher than 0, issue a backup.
+        private static int _countChanges;
         private readonly Process _gameProcess = new Process();
 
         public Form1()
@@ -275,11 +282,21 @@ namespace NorthbridgeSubSystem
         private static void AutoBackupCode()
         {
             var areSavesAvaliable = Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0;
+            var i = 1;
             if (!areSavesAvaliable) return;
-            if (!Directory.Exists(Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm")))
-                DirectoryCopy(SaveLocation,
-                    Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm") + "\\",
-                    true);
+            if (!Directory.Exists(BackupFolderSetup))
+                DirectoryCopy(SaveLocation, BackupFolderSetup, true);
+            else
+            {
+                //This variable sets a new location to create the backup, should a folder with the same name exists.
+                //Adjust the format to your liking.
+                var newBackupFolder = BackupFolderSetup + "-" + i + "\\";
+                while (Directory.Exists(BackupFolderSetup +"-"+ i + "\\"))
+                {
+                    i++;
+                }
+                DirectoryCopy(SaveLocation, newBackupFolder, true);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -298,7 +315,7 @@ namespace NorthbridgeSubSystem
             {
                 Hide();
                 //Set up a watcher to monitor the save folder. The "*" is used for wild card.
-                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && Settings.Default.EnableSnapshotMode)
+                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null)
                 {
                     var svw = new FileSystemWatcher
                     {
@@ -319,7 +336,7 @@ namespace NorthbridgeSubSystem
                 //Wait for the game to close before closing Northbridge.
                 _gameProcess.WaitForExit();
                 //Calls the Auto-Backup code.
-                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && !Settings.Default.EnableSnapshotMode) AutoBackupCode();
+                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && _countChanges > 0 && !Settings.Default.EnableSnapshotMode) AutoBackupCode();
                 Close();
             }
             AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
@@ -393,8 +410,15 @@ namespace NorthbridgeSubSystem
         }
         private static void OnChanged(object source, FileSystemEventArgs e)
         {
-            Thread.Sleep(60000);
-            AutoBackupCode();
+            if (Settings.Default.EnableSnapshotMode)
+            {
+                Thread.Sleep(WaitTime);
+                AutoBackupCode();
+            }
+            else
+            {
+                _countChanges = _countChanges + 1;
+            }
         }
     }
     }
