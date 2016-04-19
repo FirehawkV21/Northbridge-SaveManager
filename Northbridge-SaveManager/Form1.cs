@@ -320,10 +320,12 @@ namespace NorthbridgeSubSystem
                     var svw = new FileSystemWatcher
                     {
                         Path = SaveLocation,
-                        NotifyFilter = NotifyFilters.LastWrite,
+                        NotifyFilter =  NotifyFilters.LastWrite,
                         Filter = SaveFilename + SaveFileExtension
                     };
                     svw.Changed += OnChanged;
+                    svw.Created += OnChanged;
+                    svw.Deleted += OnChanged;
                     svw.EnableRaisingEvents = true;
                 }
                 //Any arguments for the game executable (set in this executable's code) are loaded.
