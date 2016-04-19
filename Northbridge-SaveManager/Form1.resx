@@ -208,7 +208,7 @@
     <value>NoControl</value>
   </data>
   <data name="RestoreBackupButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 87</value>
+    <value>178, 90</value>
   </data>
   <data name="RestoreBackupButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 23</value>
@@ -307,7 +307,7 @@
     <value>NoControl</value>
   </data>
   <data name="DeleteBackupsFailed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 71</value>
+    <value>154, 95</value>
   </data>
   <data name="DeleteBackupsFailed.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 13</value>
@@ -340,7 +340,7 @@
     <value>NoControl</value>
   </data>
   <data name="BackupDeleteCompleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 71</value>
+    <value>205, 95</value>
   </data>
   <data name="BackupDeleteCompleteLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 13</value>
@@ -376,7 +376,7 @@
     <value>NoControl</value>
   </data>
   <data name="DeleteBackupCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 91</value>
+    <value>6, 94</value>
   </data>
   <data name="DeleteBackupCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 17</value>
@@ -437,7 +437,7 @@ CAREFUL! This is irreversible.</value>
     <value>NoControl</value>
   </data>
   <data name="DeleteBackupButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 87</value>
+    <value>310, 90</value>
   </data>
   <data name="DeleteBackupButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 23</value>
@@ -558,7 +558,7 @@ This program will monitor the save file for modifications and initiate the backu
     <value>NoControl</value>
   </data>
   <data name="BackupFailedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 125</value>
+    <value>524, 125</value>
   </data>
   <data name="BackupFailedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -591,7 +591,7 @@ This program will monitor the save file for modifications and initiate the backu
     <value>NoControl</value>
   </data>
   <data name="BackupCompleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>496, 125</value>
+    <value>510, 125</value>
   </data>
   <data name="BackupCompleteLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
@@ -624,7 +624,7 @@ This program will monitor the save file for modifications and initiate the backu
     <value>NoControl</value>
   </data>
   <data name="TestBackupButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 120</value>
+    <value>568, 120</value>
   </data>
   <data name="TestBackupButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 23</value>
@@ -685,10 +685,10 @@ For safety reasons, they will be saved in different folders named after the date
     <value>NoControl</value>
   </data>
   <data name="BrowseButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 80</value>
+    <value>568, 81</value>
   </data>
   <data name="BrowseButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
+    <value>74, 21</value>
   </data>
   <data name="BrowseButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -715,7 +715,7 @@ For safety reasons, they will be saved in different folders named after the date
     <value>3, 81</value>
   </data>
   <data name="LocationBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 20</value>
+    <value>558, 20</value>
   </data>
   <data name="LocationBackup.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -829,7 +829,7 @@ It is recommended that is used in conjuction with a cloud storage service (for e
     <value>NoControl</value>
   </data>
   <data name="DeleteFailedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 51</value>
+    <value>415, 51</value>
   </data>
   <data name="DeleteFailedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 13</value>
@@ -862,7 +862,7 @@ It is recommended that is used in conjuction with a cloud storage service (for e
     <value>NoControl</value>
   </data>
   <data name="DeleteCompleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 51</value>
+    <value>514, 51</value>
   </data>
   <data name="DeleteCompleteLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -895,7 +895,7 @@ It is recommended that is used in conjuction with a cloud storage service (for e
     <value>NoControl</value>
   </data>
   <data name="DeleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 47</value>
+    <value>567, 47</value>
   </data>
   <data name="DeleteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 21</value>
@@ -1010,7 +1010,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="SelectiveExportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 42</value>
+    <value>459, 42</value>
   </data>
   <data name="SelectiveExportButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 23</value>
@@ -1040,7 +1040,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ExportFailedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 47</value>
+    <value>382, 47</value>
   </data>
   <data name="ExportFailedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
@@ -1073,7 +1073,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ExportCompleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 47</value>
+    <value>366, 47</value>
   </data>
   <data name="ExportCompleteLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -1103,7 +1103,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ExportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 42</value>
+    <value>567, 42</value>
   </data>
   <data name="ExportButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -1244,7 +1244,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ImportFailedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 49</value>
+    <value>494, 46</value>
   </data>
   <data name="ImportFailedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -1277,7 +1277,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ImportCompleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>461, 49</value>
+    <value>475, 47</value>
   </data>
   <data name="ImportCompleteLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -1307,7 +1307,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ImportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 44</value>
+    <value>567, 42</value>
   </data>
   <data name="ImportButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 21</value>

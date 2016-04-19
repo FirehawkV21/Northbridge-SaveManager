@@ -20,10 +20,10 @@ namespace NorthbridgeSubSystem
         private static readonly string GameFile = Application.StartupPath + "\\Game.rgss3a";
         //Location of the game executable.
         private static readonly string PlayerFile = Application.StartupPath + "\\Game.exe";
-        //Set the extension of the save file.
+        //Set the extension of the save file Add "*".
         private const string SaveFileExtension = "*.rvdata2";
         //The name of the save file. Usualy they are SaveXX.
-        private static readonly string SaveFilename = "Save";
+        private const string SaveFilename = "Save";
         //Initalise a structure that contains necessary info (such as arguments).
         private readonly ProcessStartInfo _gameInfo = new ProcessStartInfo(PlayerFile);
         //This is the format of the folder when the backup is executed.
@@ -184,14 +184,14 @@ namespace NorthbridgeSubSystem
                     var i = 0;
                     foreach (var fileName in ImportFilePicker.FileNames)
                     {
-                        File.Copy(fileName, SaveLocation + @"\" + SaveFilename + (numericUpDown1.Value + i) + SaveFileExtension, true);
+                        File.Copy(fileName, SaveLocation + "\\" + SaveFilename + (numericUpDown1.Value + i) + SaveFileExtension, true);
                         i++;
                     }
                 }
                 else
                     foreach (var fileName in ImportFilePicker.FileNames)
                     {
-                        File.Copy(fileName, SaveLocation + @"\" + Path.GetFileName(fileName), true);
+                        File.Copy(fileName, SaveLocation + "\\" + Path.GetFileName(fileName), true);
                     }
                 if (Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0)
                 {
@@ -302,7 +302,7 @@ namespace NorthbridgeSubSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             //Initialises an array were all arguments passed to this executable are saved.
-            string[] args = Environment.GetCommandLineArgs();
+            var args = Environment.GetCommandLineArgs();
             //Checks if the argument to call the UI is present. If not, launch the game.
             if (args.Contains("-NBSetup")) return;
             //Checks if the files set in lines 12 - 19 are present. Adjust this accordingly.
@@ -321,7 +321,7 @@ namespace NorthbridgeSubSystem
                     {
                         Path = SaveLocation,
                         NotifyFilter = NotifyFilters.LastWrite,
-                        Filter = SaveFilename + @"*" + SaveFileExtension
+                        Filter = SaveFilename + SaveFileExtension
                     };
                     svw.Changed += OnChanged;
                     svw.EnableRaisingEvents = true;

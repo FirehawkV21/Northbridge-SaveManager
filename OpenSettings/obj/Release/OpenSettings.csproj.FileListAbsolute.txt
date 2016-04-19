@@ -1,4 +1,3 @@
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\obj\Release\OpenSettings.csprojResolveAssemblyReference.cache
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\obj\Release\OpenSettings.Form1.resources
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\obj\Release\OpenSettings.Properties.Resources.resources
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\OpenSettings\obj\Release\OpenSettings.csproj.GenerateResource.Cache

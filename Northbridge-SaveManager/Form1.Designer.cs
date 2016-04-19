@@ -43,6 +43,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.DeleteBackupButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.EnableSnapshotCheckbox = new System.Windows.Forms.CheckBox();
             this.BackupFailedLabel = new System.Windows.Forms.Label();
             this.BackupCompleteLabel = new System.Windows.Forms.Label();
             this.TestBackupButton = new System.Windows.Forms.Button();
@@ -76,7 +77,6 @@
             this.BackupFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
             this.RestoreFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
             this.ExportFilePicker = new System.Windows.Forms.OpenFileDialog();
-            this.EnableSnapshotCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -214,6 +214,12 @@
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // EnableSnapshotCheckbox
+            // 
+            resources.ApplyResources(this.EnableSnapshotCheckbox, "EnableSnapshotCheckbox");
+            this.EnableSnapshotCheckbox.Name = "EnableSnapshotCheckbox";
+            this.EnableSnapshotCheckbox.UseVisualStyleBackColor = true;
             // 
             // BackupFailedLabel
             // 
@@ -435,12 +441,6 @@
             // 
             resources.ApplyResources(this.ExportFilePicker, "ExportFilePicker");
             this.ExportFilePicker.Multiselect = true;
-            // 
-            // EnableSnapshotCheckbox
-            // 
-            resources.ApplyResources(this.EnableSnapshotCheckbox, "EnableSnapshotCheckbox");
-            this.EnableSnapshotCheckbox.Name = "EnableSnapshotCheckbox";
-            this.EnableSnapshotCheckbox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
