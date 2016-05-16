@@ -181,19 +181,26 @@ namespace NorthbridgeSubSystem
             {
                 if (SlotSelectCheckBox.Checked)
                 {
+                    var count = numericUpDown1.Value;
                     var i = 0;
                     foreach (var fileName in ImportFilePicker.FileNames)
                     {
-                        File.Copy(fileName, SaveLocation + "\\" + SaveFilename + (numericUpDown1.Value + i) + SaveFileExtension, true);
+                        if (count >= 10 || count + i >= 10)
+                            File.Copy(fileName, SaveLocation + @"\" + "GameSave" + (count + i) + ".isgsf", true);
+
+                        else
+                        {
+                            File.Copy(fileName, SaveLocation + @"\" + "GameSave0" + (count + i) + ".isgsf", true);
+                        }
                         i++;
                     }
                 }
                 else
                     foreach (var fileName in ImportFilePicker.FileNames)
                     {
-                        File.Copy(fileName, SaveLocation + "\\" + Path.GetFileName(fileName), true);
+                        File.Copy(fileName, SaveLocation + @"\" + Path.GetFileName(fileName), true);
                     }
-                if (Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0)
+                if (Directory.GetFiles(SaveLocation, "*.isgsf").Length > 0)
                 {
                     ExportButton.Enabled = true;
                     SelectiveExportButton.Enabled = true;
