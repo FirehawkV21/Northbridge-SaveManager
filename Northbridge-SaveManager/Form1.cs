@@ -345,7 +345,7 @@ namespace NorthbridgeSubSystem
                 //Wait for the game to close before closing Northbridge.
                 _gameProcess.WaitForExit();
                 //Calls the Auto-Backup code.
-                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && _countChanges > 0 && !Settings.Default.EnableSnapshotMode) AutoBackupCode();
+                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && _countChanges > 0 && !Settings.Default.SingleBackupMode) AutoBackupCode();
                 Close();
             }
             AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
@@ -417,12 +417,13 @@ namespace NorthbridgeSubSystem
                 ExportFailedLabel.Visible = true;
             }
         }
+
         private static void OnChanged(object source, FileSystemEventArgs e)
+
         {
-            if (Settings.Default.EnableSnapshotMode)
+            if (Settings.Default.SingleBackupMode)
             {
-                Thread.Sleep(WaitTime);
-                AutoBackupCode();
+                File.Copy(e.FullPath, Settings.Default.AutoBackupLocation + "\\" + e.Name, true);
             }
             else
             {

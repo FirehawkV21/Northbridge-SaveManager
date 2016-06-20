@@ -4,7 +4,6 @@ C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\DotNetOpenAuth.Core.dll
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Dropbox.Api.dll
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Newtonsoft.Json.dll
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\OneDriveSdk.dll
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\OneDriveSdk.WindowsForms.dll
@@ -16,10 +15,12 @@ C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Newtonsoft.Json.xml
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\System.Net.Http.Extensions.xml
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\System.Net.Http.Primitives.xml
-C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\WindowsFormsApplication2.csprojResolveAssemblyReference.cache
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubSystem.AuthBrowser.resources
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubSystem.Form1.resources
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubSystem.Properties.Resources.resources
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\WindowsFormsApplication2.csproj.GenerateResource.Cache
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubsystem.exe
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\NorthbridgeSubsystem.pdb
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
+C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\WindowsFormsApplication2.csproj.NorthbridgeSubsystem.exe.config

@@ -530,14 +530,14 @@ CAREFUL! This is irreversible.</value>
     <value>13, 141</value>
   </data>
   <data name="EnableSnapshotCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>508, 30</value>
+    <value>297, 30</value>
   </data>
   <data name="EnableSnapshotCheckbox.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="EnableSnapshotCheckbox.Text" xml:space="preserve">
-    <value>Snapshot mode.
-This program will monitor the save file for modifications and initiate the backup routine after one minute.</value>
+    <value>Keep only one backup. Replace the older ones with new.
+(Reccomended for in use with a cloud storage client)</value>
   </data>
   <data name="&gt;&gt;EnableSnapshotCheckbox.Name" xml:space="preserve">
     <value>EnableSnapshotCheckbox</value>

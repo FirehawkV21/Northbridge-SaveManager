@@ -59,12 +59,12 @@ namespace NorthbridgeSubSystem.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool EnableSnapshotMode {
+        public bool SingleBackupMode {
             get {
-                return ((bool)(this["EnableSnapshotMode"]));
+                return ((bool)(this["SingleBackupMode"]));
             }
             set {
-                this["EnableSnapshotMode"] = value;
+                this["SingleBackupMode"] = value;
             }
         }
     }
