@@ -24,3 +24,4 @@ C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
 C:\Users\acemo\Source\Repos\Northbridge-BckupAndRestore\Northbridge-SaveManager\obj\Release\WindowsFormsApplication2.csproj.NorthbridgeSubsystem.exe.config
+C:\Users\Dimitris\Source\Repos\Northbridge-SaveManager\Northbridge-SaveManager\bin\Release\NorthbridgeSubsystem.exe.config
