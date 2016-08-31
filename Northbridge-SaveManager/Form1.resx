@@ -1506,7 +1506,7 @@ WARNING! This will replace the save file with the same name.</value>
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Backup And Restore</value>
+    <value>Save Manager</value>
   </data>
   <data name="&gt;&gt;ImportFilePicker.Name" xml:space="preserve">
     <value>ImportFilePicker</value>
