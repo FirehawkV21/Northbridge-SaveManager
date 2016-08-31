@@ -1277,7 +1277,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>NoControl</value>
   </data>
   <data name="ImportCompleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 47</value>
+    <value>475, 46</value>
   </data>
   <data name="ImportCompleteLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
