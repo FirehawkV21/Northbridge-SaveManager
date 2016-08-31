@@ -1422,6 +1422,16 @@
             Contains information of a single user. This information is used for token cache lookup. Also if created with userId, userId is sent to the service when login_hint is accepted.
             </summary>
         </member>
+        <member name="M:Microsoft.IdentityModel.Clients.ActiveDirectory.UserInfo.#ctor">
+            <summary>
+            Create user information for token cache lookup
+            </summary>
+        </member>
+        <member name="M:Microsoft.IdentityModel.Clients.ActiveDirectory.UserInfo.#ctor(Microsoft.IdentityModel.Clients.ActiveDirectory.UserInfo)">
+            <summary>
+            Create user information copied from another UserInfo object
+            </summary>
+        </member>
         <member name="P:Microsoft.IdentityModel.Clients.ActiveDirectory.UserInfo.UniqueId">
             <summary>
             Gets identifier of the user authenticated during token acquisition. 

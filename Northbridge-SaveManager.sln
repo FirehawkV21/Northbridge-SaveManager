@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication2", "Northbridge-SaveManager\WindowsFormsApplication2.csproj", "{75E3581A-6FCE-4F26-9B62-001EF6DB4789}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northbridge-SaveManager", "Northbridge-SaveManager\Northbridge-SaveManager.csproj", "{75E3581A-6FCE-4F26-9B62-001EF6DB4789}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSettings", "OpenSettings\OpenSettings.csproj", "{CE4EB036-97E9-428C-A924-E7C11FF486EB}"
 EndProject

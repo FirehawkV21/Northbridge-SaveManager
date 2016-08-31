@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using NorthbridgeSubSystem.Properties;
 
@@ -28,8 +27,6 @@ namespace NorthbridgeSubSystem
         private readonly ProcessStartInfo _gameInfo = new ProcessStartInfo(PlayerFile);
         //This is the format of the folder when the backup is executed.
         private static readonly string BackupFolderSetup = Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm");
-        //How many seconds it will wait until a backup is issued (Snapshot Mode only).
-        private const int WaitTime = 60000;
         //Interger used as a check for the backup system (Normal Mode only).
         //If this interger is higher than 0, issue a backup.
         private static int _countChanges;
@@ -397,25 +394,8 @@ namespace NorthbridgeSubSystem
 
         private void SelectiveExportButton_Click(object sender, EventArgs e)
         {
-            ExportFilePicker.InitialDirectory = SaveLocation;
-            ExportCompleteLabel.Visible = false;
-            ExportFailedLabel.Visible = false;
-            var seli = ExportFilePicker.ShowDialog();
-            if (seli != DialogResult.OK) return;
-            var eli = ExportFolderDialog.ShowDialog();
-            if (eli != DialogResult.OK) return;
-            try
-            {
-                foreach (var fileName in ExportFilePicker.SafeFileNames)
-                {
-                    File.Copy(SaveLocation + "\\" + Path.GetFileName(fileName), ExportFolderDialog.SelectedPath + "\\" + Path.GetFileName(fileName), true);
-                }
-                ExportCompleteLabel.Visible = true;
-            }
-            catch (Exception)
-            {
-                ExportFailedLabel.Visible = true;
-            }
+            Form sExport = new ExportTool();
+            sExport.Show();
         }
 
         private static void OnChanged(object source, FileSystemEventArgs e)

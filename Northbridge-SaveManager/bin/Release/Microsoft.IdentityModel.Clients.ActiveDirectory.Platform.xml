@@ -842,6 +842,23 @@
             credentials again and the logon dialog will dismiss automatically.
             </summary>
         </member>
+        <member name="T:Microsoft.IdentityModel.Clients.ActiveDirectory.SecureClientSecret">
+            <summary>
+            This class allows to pass client secret as a SecureString to the API.
+            </summary>
+        </member>
+        <member name="M:Microsoft.IdentityModel.Clients.ActiveDirectory.SecureClientSecret.#ctor(System.Security.SecureString)">
+            <summary>
+            Required Constructor
+            </summary>
+            <param name="secret">SecureString secret. Required and cannot be null.</param>
+        </member>
+        <member name="M:Microsoft.IdentityModel.Clients.ActiveDirectory.SecureClientSecret.ApplyTo(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Applies the secret to the dictionary.
+            </summary>
+            <param name="parameters">Dictionary to which the securestring is applied to be sent to server</param>
+        </member>
         <member name="T:Microsoft.IdentityModel.Clients.ActiveDirectory.StaTaskScheduler">
             <summary>Provides a scheduler that uses STA threads.</summary>
         </member>
