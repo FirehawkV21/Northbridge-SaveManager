@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,28 +8,7 @@ namespace NorthbridgeSubSystem
 {
     public partial class Form1 : Form
     {
-        //Initialising a few static variables here. Add anything you want the executable to access frequently here as variables.
-        
-        //Location of the Save folder.
-        private static readonly string SaveLocation = Application.StartupPath + "\\Saves\\";
-        //Location of the RGSS Library (RMXP/RMVX/RMVXA).
-        private static readonly string RgssLib = Application.StartupPath + "\\System\\RGSS301.dll";
-        //Location of the Game file (RMXP/RMVX/RMVXA).
-        private static readonly string GameFile = Application.StartupPath + "\\Game.rgss3a";
-        //Location of the game executable.
-        private static readonly string PlayerFile = Application.StartupPath + "\\Game.exe";
-        //Set the extension of the save file Add "*".
-        private const string SaveFileExtension = "*.rvdata2";
-        //The name of the save file. Usualy they are SaveXX.
-        private const string SaveFilename = "Save";
-        //Initalise a structure that contains necessary info (such as arguments).
-        private readonly ProcessStartInfo _gameInfo = new ProcessStartInfo(PlayerFile);
-        //This is the format of the folder when the backup is executed.
-        private static readonly string BackupFolderSetup = Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm");
-        //Interger used as a check for the backup system (Normal Mode only).
-        //If this interger is higher than 0, issue a backup.
-        private static int _countChanges;
-        private readonly Process _gameProcess = new Process();
+         //All variables are saved to the CommonVariables.cs file. If you come from version R1.04 (1.4.0.XXXX) and older, make sure to check it.
 
         public Form1()
         {
@@ -39,15 +17,16 @@ namespace NorthbridgeSubSystem
 
         private void RestoreBackupButton_Click(object sender, EventArgs e)
         {
+            //Code used to restore an older backup.
             RestoreCompleteLabel.Visible = false;
             RestoreFailedLabel.Visible = false;
             var rli = RestoreFolderPicker.ShowDialog();
             if (rli != DialogResult.OK) return;
             try
             {
-                Directory.Delete(SaveLocation, true);
-                Directory.CreateDirectory(SaveLocation);
-                DirectoryCopy(RestoreFolderPicker.SelectedPath, SaveLocation, true);
+                Directory.Delete(CommonVariables.SaveLocation, true);
+                Directory.CreateDirectory(CommonVariables.SaveLocation);
+                DirectoryCopy(RestoreFolderPicker.SelectedPath, CommonVariables.SaveLocation, true);
                 RestoreCompleteLabel.Visible = true;
             }
             catch (Exception)
@@ -86,7 +65,7 @@ namespace NorthbridgeSubSystem
             {
                 var backupFolder = Settings.Default.AutoBackupLocation + "\\" + "Backup" +
                                    DateTime.Now.ToString("yyyyMMddHHmm") + "\\";
-                DirectoryCopy(SaveLocation, backupFolder, true);
+                DirectoryCopy(CommonVariables.SaveLocation, backupFolder, true);
                 BackupCompleteLabel.Visible = true;
             }
             catch (Exception)
@@ -130,8 +109,8 @@ namespace NorthbridgeSubSystem
             DeleteCompleteLabel.Visible = false;
             try
             {
-                Directory.Delete(SaveLocation, true);
-                Directory.CreateDirectory(SaveLocation);
+                Directory.Delete(CommonVariables.SaveLocation, true);
+                Directory.CreateDirectory(CommonVariables.SaveLocation);
                 ExportButton.Enabled = false;
                 DeleteCompleteLabel.Visible = true;
             }
@@ -154,7 +133,7 @@ namespace NorthbridgeSubSystem
             if (eli != DialogResult.OK) return;
             try
             {
-                DirectoryCopy(SaveLocation, ExportFolderDialog.SelectedPath, true);
+                DirectoryCopy(CommonVariables.SaveLocation, ExportFolderDialog.SelectedPath, true);
                 ExportCompleteLabel.Visible = true;
             }
             catch (Exception)
@@ -183,11 +162,11 @@ namespace NorthbridgeSubSystem
                     foreach (var fileName in ImportFilePicker.FileNames)
                     {
                         if (count >= 10 || count + i >= 10)
-                            File.Copy(fileName, SaveLocation + @"\" + "GameSave" + (count + i) + ".isgsf", true);
+                            File.Copy(fileName, CommonVariables.SaveLocation + @"\" + "GameSave" + (count + i) + ".isgsf", true);
 
                         else
                         {
-                            File.Copy(fileName, SaveLocation + @"\" + "GameSave0" + (count + i) + ".isgsf", true);
+                            File.Copy(fileName, CommonVariables.SaveLocation + @"\" + "GameSave0" + (count + i) + ".isgsf", true);
                         }
                         i++;
                     }
@@ -195,9 +174,9 @@ namespace NorthbridgeSubSystem
                 else
                     foreach (var fileName in ImportFilePicker.FileNames)
                     {
-                        File.Copy(fileName, SaveLocation + @"\" + Path.GetFileName(fileName), true);
+                        File.Copy(fileName, CommonVariables.SaveLocation + @"\" + Path.GetFileName(fileName), true);
                     }
-                if (Directory.GetFiles(SaveLocation, "*.isgsf").Length > 0)
+                if (Directory.GetFiles(CommonVariables.SaveLocation, "*.isgsf").Length > 0)
                 {
                     ExportButton.Enabled = true;
                     SelectiveExportButton.Enabled = true;
@@ -285,21 +264,21 @@ namespace NorthbridgeSubSystem
 
         private static void AutoBackupCode()
         {
-            var areSavesAvaliable = Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0;
+            var areSavesAvaliable = Directory.GetFiles(CommonVariables.SaveLocation, CommonVariables.SaveFilename + CommonVariables.SaveFileExtension).Length > 0;
             var i = 1;
             if (!areSavesAvaliable) return;
-            if (!Directory.Exists(BackupFolderSetup))
-                DirectoryCopy(SaveLocation, BackupFolderSetup, true);
+            if (!Directory.Exists(CommonVariables.BackupFolderSetup))
+                DirectoryCopy(CommonVariables.SaveLocation, CommonVariables.BackupFolderSetup, true);
             else
             {
                 //This variable sets a new location to create the backup, should a folder with the same name exists.
                 //Adjust the format to your liking.
-                var newBackupFolder = BackupFolderSetup + "-" + i + "\\";
-                while (Directory.Exists(BackupFolderSetup +"-"+ i + "\\"))
+                var newBackupFolder = CommonVariables.BackupFolderSetup + "-" + i + "\\";
+                while (Directory.Exists(CommonVariables.BackupFolderSetup +"-"+ i + "\\"))
                 {
                     i++;
                 }
-                DirectoryCopy(SaveLocation, newBackupFolder, true);
+                DirectoryCopy(CommonVariables.SaveLocation, newBackupFolder, true);
             }
         }
 
@@ -310,7 +289,7 @@ namespace NorthbridgeSubSystem
             //Checks if the argument to call the UI is present. If not, launch the game.
             if (args.Contains("-NBSetup")) return;
             //Checks if the files set in lines 12 - 19 are present. Adjust this accordingly.
-            if (!File.Exists(PlayerFile) || !File.Exists(RgssLib) || !File.Exists(GameFile))
+            if (!File.Exists(CommonVariables.PlayerFile) || !File.Exists(CommonVariables.RgssLib) || !File.Exists(CommonVariables.GameFile))
             {
                 MessageBox.Show(@"Missing file(s). Aborting.");
                 Close();
@@ -318,38 +297,26 @@ namespace NorthbridgeSubSystem
             else
             {
                 Hide();
-                //Set up a watcher to monitor the save folder. The "*" is used for wild card.
-                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null)
-                {
-                    var svw = new FileSystemWatcher
-                    {
-                        Path = SaveLocation,
-                        NotifyFilter =  NotifyFilters.LastWrite,
-                        Filter = SaveFilename + SaveFileExtension
-                    };
-                    svw.Changed += OnChanged;
-                    svw.Created += OnChanged;
-                    svw.Deleted += OnChanged;
-                    svw.EnableRaisingEvents = true;
-                }
+                //Calls the setup mode from the BackupEngine.cs file.
+                BackupEngine.BackupModeSetup();
                 //Any arguments for the game executable (set in this executable's code) are loaded.
                 //So, for example you pass the arguments --LoadFile <file> via code, this will happen:
                 // Run "<Game Folder>\Game.exe" --LoadFile <file>
                 // Set these with _gameInfo.Arguments = "argument1 argument2";
-                _gameProcess.StartInfo = _gameInfo;
+                CommonVariables.GameProcess.StartInfo = CommonVariables.GameInfo;
                 //Start the game.
-                _gameProcess.Start();
+                CommonVariables.GameProcess.Start();
                 //Wait for the game to close before closing Northbridge.
-                _gameProcess.WaitForExit();
+                CommonVariables.GameProcess.WaitForExit();
                 //Calls the Auto-Backup code.
-                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && _countChanges > 0 && !Settings.Default.SingleBackupMode) AutoBackupCode();
+                if (Settings.Default.AutoBackupEnabled && Settings.Default.AutoBackupLocation != null && CommonVariables.CountChanges > 0 && !Settings.Default.SingleBackupMode) AutoBackupCode();
                 Close();
             }
             AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
             LocationBackup.Text = Settings.Default.AutoBackupLocation;
-            if (!Directory.Exists(SaveLocation))
+            if (!Directory.Exists(CommonVariables.SaveLocation))
             {
-                Directory.CreateDirectory(SaveLocation);
+                Directory.CreateDirectory(CommonVariables.SaveLocation);
                 ExportButton.Enabled = false;
                 SelectiveExportButton.Enabled = false;
                 AutoBackupCheckbox.Enabled = false;
@@ -362,7 +329,7 @@ namespace NorthbridgeSubSystem
                 DeleteBackupButton.Enabled = false;
             }
             else
-            if (Directory.GetFiles(SaveLocation, SaveFilename + SaveFileExtension).Length > 0)
+            if (Directory.GetFiles(CommonVariables.SaveLocation, CommonVariables.SaveFilename + CommonVariables.SaveFileExtension).Length > 0)
             {
                 ExportButton.Enabled = true;
                 SelectiveExportButton.Enabled = true;
@@ -396,19 +363,6 @@ namespace NorthbridgeSubSystem
         {
             Form sExport = new ExportTool();
             sExport.Show();
-        }
-
-        private static void OnChanged(object source, FileSystemEventArgs e)
-
-        {
-            if (Settings.Default.SingleBackupMode)
-            {
-                File.Copy(e.FullPath, Settings.Default.AutoBackupLocation + "\\" + e.Name, true);
-            }
-            else
-            {
-                _countChanges = _countChanges + 1;
-            }
         }
     }
     }

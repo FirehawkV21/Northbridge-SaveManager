@@ -211,6 +211,8 @@
     <Compile Include="AuthBrowser.Designer.cs">
       <DependentUpon>AuthBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="BackupEngine.cs" />
+    <Compile Include="CommonVariables.cs" />
     <Compile Include="ExportTool.cs">
       <SubType>Form</SubType>
     </Compile>
