@@ -8,7 +8,7 @@ namespace NorthbridgeSubSystem
     internal static class StorageToolkit
     {
 
-        public static void DiskCheck(string folderLocation)
+        public static void DiskCheck(string folderLocation, bool isTarget)
         {
             var permissionSet = new PermissionSet(PermissionState.None);
             var writePermission = new FileIOPermission(FileIOPermissionAccess.Write, folderLocation);
@@ -17,15 +17,24 @@ namespace NorthbridgeSubSystem
             permissionSet.AddPermission(readPermission);
             var drive = new DriveInfo(folderLocation);
             if (!drive.IsReady) return;
+            if (isTarget)
+            CommonVariables.TgtIsDriveReady = true;
+            else
             CommonVariables.IsDriveReady = true;
             var a = new DriveInfo(drive.Name);
             if (a.AvailableFreeSpace > 70)
             {
                 if (permissionSet.IsSubsetOf(AppDomain.CurrentDomain.PermissionSet)) return;
-                CommonVariables.PermissionError = true;
+                if (isTarget)
+                CommonVariables.TgtPermissionError = true;
+                else
+                    CommonVariables.PermissionError = true;
             }
             else
             {
+                if (isTarget)
+                CommonVariables.TgtSpaceError = true;
+                else
                 CommonVariables.SpaceError = true;
             }
         }

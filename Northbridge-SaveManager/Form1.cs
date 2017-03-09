@@ -249,6 +249,16 @@ namespace NorthbridgeSubSystem
             }
             else
             {
+                StorageToolkit.DiskCheck(CommonVariables.SaveLocation, false);
+                if (!CommonVariables.IsDriveReady)
+                    MessageBox.Show(@"The disk isn't ready. You won't be able to save.", @"Disk isn't ready", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (CommonVariables.PermissionError)
+                    MessageBox.Show(
+                        @"Cannot access the save folder. You won't be able to save.", @"Permission Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                if (CommonVariables.SpaceError)
+                    MessageBox.Show(@"Not enough space to save. Please free up some space.",
+                        @"The free space is too low!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Hide();
                 //Calls the setup mode from the BackupEngine.cs file.
                 BackupEngine.BackupModeSetup();

@@ -33,11 +33,11 @@ namespace NorthbridgeSubSystem
             {
                 var eli = ExportFolderDialog.ShowDialog();
                 if (eli != DialogResult.OK) return;
-                StorageToolkit.DiskCheck(ExportFolderDialog.SelectedPath);
-                if (CommonVariables.PermissionError) MessageBox.Show(@"Cannot access the target folder.", @"Permission Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (CommonVariables.SpaceError) MessageBox.Show(@"Not enough space on the storage drive.", @"Out of space", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (!CommonVariables.IsDriveReady) MessageBox.Show(@"The drive that stores the target folder isn't ready.", @"Drive not ready", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (CommonVariables.PermissionError || CommonVariables.SpaceError || !CommonVariables.IsDriveReady) return;
+                StorageToolkit.DiskCheck(ExportFolderDialog.SelectedPath, true);
+                if (CommonVariables.TgtPermissionError) MessageBox.Show(@"Cannot access the target folder.", @"Permission Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (CommonVariables.TgtSpaceError) MessageBox.Show(@"Not enough space on the storage drive.", @"Out of space", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (!CommonVariables.TgtIsDriveReady) MessageBox.Show(@"The drive that stores the target folder isn't ready.", @"Drive not ready", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (CommonVariables.TgtPermissionError || CommonVariables.TgtSpaceError || !CommonVariables.TgtIsDriveReady) return;
                 foreach (var str in checkedListBox1.CheckedItems)
                 {
                     MessageBox.Show(str.ToString());

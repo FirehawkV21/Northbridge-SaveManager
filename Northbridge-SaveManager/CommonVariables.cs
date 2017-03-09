@@ -36,5 +36,8 @@ namespace NorthbridgeSubSystem
         public static bool IsDriveReady;
         public static bool SpaceError;
         public static bool PermissionError;
+        public static bool TgtIsDriveReady;
+        public static bool TgtSpaceError;
+        public static bool TgtPermissionError;
     }
 }
