@@ -1145,7 +1145,7 @@
             impact all the instances of <see cref="T:Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext"/> which share that cache.
             </summary>
         </member>
-        <member name="M:Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache.QueryCache(System.String,System.String,Microsoft.IdentityModel.Clients.ActiveDirectory.TokenSubjectType,System.String,System.String)">
+        <member name="M:Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache.QueryCache(System.String,System.String,Microsoft.IdentityModel.Clients.ActiveDirectory.TokenSubjectType,System.String,System.String,System.String)">
             <summary>
             Queries all values in the cache that meet the passed in values, plus the 
             authority value that this AuthorizationContext was created with.  In every case passing

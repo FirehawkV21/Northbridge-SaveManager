@@ -3,7 +3,7 @@ using NorthbridgeSubSystem.Properties;
 
 namespace NorthbridgeSubSystem
 {
-    static class BackupEngine
+    internal static class BackupEngine
     {
         public static void BackupModeSetup()
         {
@@ -30,6 +30,26 @@ namespace NorthbridgeSubSystem
             else
             {
                 CommonVariables.CountChanges = CommonVariables.CountChanges + 1;
+            }
+        }
+
+        public static void AutoBackupCode()
+        {
+            var areSavesAvaliable = Directory.GetFiles(CommonVariables.SaveLocation, CommonVariables.SaveFilename + CommonVariables.SaveFileExtension).Length > 0;
+            var i = 1;
+            if (!areSavesAvaliable) return;
+            if (!Directory.Exists(CommonVariables.BackupFolderSetup))
+                StorageToolkit.DirectoryCopy(CommonVariables.SaveLocation, CommonVariables.BackupFolderSetup, true);
+            else
+            {
+                //This variable sets a new location to create the backup, should a folder with the same name exists.
+                //Adjust the format to your liking.
+                var newBackupFolder = CommonVariables.BackupFolderSetup + "-" + i + "\\";
+                while (Directory.Exists(CommonVariables.BackupFolderSetup + "-" + i + "\\"))
+                {
+                    i++;
+                }
+                StorageToolkit.DirectoryCopy(CommonVariables.SaveLocation, newBackupFolder, true);
             }
         }
     }
