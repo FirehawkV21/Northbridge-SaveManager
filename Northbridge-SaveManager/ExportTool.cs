@@ -6,14 +6,6 @@ namespace NorthbridgeSubSystem
 {
     public partial class ExportTool : Form
     {
-        //Location of the Save folder.
-        private static readonly string SaveLocation = Application.StartupPath + "\\Saves\\";
-        //Set the extension of the save file Add "*".
-        private const string SaveFileExtension = "*.rvdata2";
-        //The name of the save file. Usualy they are SaveXX.
-        private const string SaveFilename = "Save";
-        //Initalise a structure that contains necessary info (such as arguments).
-        private const int Saveslots = 16;
         private int _n;
         public ExportTool()
         {
@@ -24,13 +16,13 @@ namespace NorthbridgeSubSystem
         {
             
 
-            for (_n = 1; _n <= Saveslots; _n++)
+            for (_n = 1; _n <= CommonVariables.Saveslots; _n++)
             {
-                if (File.Exists(SaveLocation + SaveFilename + "0" + _n + SaveFileExtension))
-                    checkedListBox1.Items.Add(SaveFilename + "0" + _n + SaveFileExtension);
-                else if (File.Exists(SaveLocation + SaveFilename + _n + SaveFileExtension))
+                if (File.Exists(CommonVariables.SaveLocation + CommonVariables.SaveFilename + "0" + _n + CommonVariables.SaveFileExtension))
+                    checkedListBox1.Items.Add(CommonVariables.SaveFilename + "0" + _n + CommonVariables.SaveFileExtension);
+                else if (File.Exists(CommonVariables.SaveLocation + CommonVariables.SaveFilename + _n + CommonVariables.SaveFileExtension))
                 {
-                    checkedListBox1.Items.Add(SaveFilename + _n + SaveFileExtension);
+                    checkedListBox1.Items.Add(CommonVariables.SaveFilename + _n + CommonVariables.SaveFileExtension);
                 }
             }
         }
@@ -41,28 +33,23 @@ namespace NorthbridgeSubSystem
             {
                 var eli = ExportFolderDialog.ShowDialog();
                 if (eli != DialogResult.OK) return;
-
+                StorageToolkit.DiskCheck(ExportFolderDialog.SelectedPath);
+                if (CommonVariables.PermissionError) MessageBox.Show(@"Cannot access the target folder.", @"Permission Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (CommonVariables.SpaceError) MessageBox.Show(@"Not enough space on the storage drive.", @"Out of space", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (!CommonVariables.IsDriveReady) MessageBox.Show(@"The drive that stores the target folder isn't ready.", @"Drive not ready", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (CommonVariables.PermissionError || CommonVariables.SpaceError || !CommonVariables.IsDriveReady) return;
                 foreach (var str in checkedListBox1.CheckedItems)
                 {
                     MessageBox.Show(str.ToString());
-                    File.Copy(SaveLocation + "\\" + str, ExportFolderDialog.SelectedPath + "\\" + str, true); 
+                    File.Copy(CommonVariables.SaveLocation + "\\" + str, ExportFolderDialog.SelectedPath + "\\" + str, true); 
                 }
-                //for (_n = 0; _n <= checkedListBox1.CheckedIndices.Count; _n++)
-                //{
-                //    if (checkedListBox1.GetItemCheckState(_n) == CheckState.Checked)
-                //    {
-                //        MessageBox.Show((checkedListBox1.GetItemCheckState(_n) == CheckState.Checked).ToString());
-                //        if (_n < 10)
-                //            File.Copy(SaveLocation + "\\" + checkedListBox1.CheckedIndices[_n],
-                //                ExportFolderDialog.SelectedPath + "\\" + checkedListBox1.GetItemText(_n), true);
-                //    }
-                //}
-                MessageBox.Show(@"Export Complete!");
+
+                MessageBox.Show(@"Export Complete!", @"Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             catch (Exception)
             {
-                MessageBox.Show(@"Failed to export!");
+                MessageBox.Show(@"Failed to export!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Close();
         }

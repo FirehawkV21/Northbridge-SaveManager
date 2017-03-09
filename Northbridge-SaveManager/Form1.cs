@@ -8,7 +8,7 @@ namespace NorthbridgeSubSystem
 {
     public partial class Form1 : Form
     {
-         //All variables are saved to the CommonVariables.cs file. If you come from version R1.04 (1.4.0.XXXX) and older, make sure to check it.
+         //All variables are saved to the CommonVariables.cs file. If you come from version R1.04 (1.4.0-20160901) and older, make sure to check it.
 
         public Form1()
         {
@@ -26,7 +26,7 @@ namespace NorthbridgeSubSystem
             {
                 Directory.Delete(CommonVariables.SaveLocation, true);
                 Directory.CreateDirectory(CommonVariables.SaveLocation);
-                DirectoryCopy(RestoreFolderPicker.SelectedPath, CommonVariables.SaveLocation, true);
+                StorageToolkit.DirectoryCopy(RestoreFolderPicker.SelectedPath, CommonVariables.SaveLocation, true);
                 RestoreCompleteLabel.Visible = true;
             }
             catch (Exception)
@@ -65,7 +65,7 @@ namespace NorthbridgeSubSystem
             {
                 var backupFolder = Settings.Default.AutoBackupLocation + "\\" + "Backup" +
                                    DateTime.Now.ToString("yyyyMMddHHmm") + "\\";
-                DirectoryCopy(CommonVariables.SaveLocation, backupFolder, true);
+                StorageToolkit.DirectoryCopy(CommonVariables.SaveLocation, backupFolder, true);
                 BackupCompleteLabel.Visible = true;
             }
             catch (Exception)
@@ -133,7 +133,7 @@ namespace NorthbridgeSubSystem
             if (eli != DialogResult.OK) return;
             try
             {
-                DirectoryCopy(CommonVariables.SaveLocation, ExportFolderDialog.SelectedPath, true);
+                StorageToolkit.DirectoryCopy(CommonVariables.SaveLocation, ExportFolderDialog.SelectedPath, true);
                 ExportCompleteLabel.Visible = true;
             }
             catch (Exception)
@@ -215,60 +215,13 @@ namespace NorthbridgeSubSystem
             Close();
         }
 
-        private static void DirectoryCopy(
-            string sourceDirName, string destDirName, bool copySubDirs)
-        {
-            var dir = new DirectoryInfo(sourceDirName);
-            var dirs = dir.GetDirectories();
-
-            // If the source directory does not exist, throw an exception.
-            if (!dir.Exists)
-            {
-                throw new DirectoryNotFoundException(
-                    "Source directory does not exist or could not be found: "
-                    + sourceDirName);
-            }
-
-            // If the destination directory does not exist, create it.
-            if (!Directory.Exists(destDirName))
-            {
-                Directory.CreateDirectory(destDirName);
-            }
-
-
-            // Get the file contents of the directory to copy.
-            var files = dir.GetFiles();
-
-            foreach (var file in files)
-            {
-                // Create the path to the new copy of the file.
-                var temppath = Path.Combine(destDirName, file.Name);
-
-                // Copy the file.
-                file.CopyTo(temppath, false);
-            }
-
-            // If copySubDirs is true, copy the subdirectories.
-            if (!copySubDirs) return;
-            {
-                foreach (var subdir in dirs)
-                {
-                    // Create the subdirectory.
-                    var temppath = Path.Combine(destDirName, subdir.Name);
-
-                    // Copy the subdirectories.
-                    DirectoryCopy(subdir.FullName, temppath, true);
-                }
-            }
-        }
-
         private static void AutoBackupCode()
         {
             var areSavesAvaliable = Directory.GetFiles(CommonVariables.SaveLocation, CommonVariables.SaveFilename + CommonVariables.SaveFileExtension).Length > 0;
             var i = 1;
             if (!areSavesAvaliable) return;
             if (!Directory.Exists(CommonVariables.BackupFolderSetup))
-                DirectoryCopy(CommonVariables.SaveLocation, CommonVariables.BackupFolderSetup, true);
+                StorageToolkit.DirectoryCopy(CommonVariables.SaveLocation, CommonVariables.BackupFolderSetup, true);
             else
             {
                 //This variable sets a new location to create the backup, should a folder with the same name exists.
@@ -278,7 +231,7 @@ namespace NorthbridgeSubSystem
                 {
                     i++;
                 }
-                DirectoryCopy(CommonVariables.SaveLocation, newBackupFolder, true);
+                StorageToolkit.DirectoryCopy(CommonVariables.SaveLocation, newBackupFolder, true);
             }
         }
 

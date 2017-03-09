@@ -25,10 +25,16 @@ namespace NorthbridgeSubSystem
         public static readonly ProcessStartInfo GameInfo = new ProcessStartInfo(PlayerFile);
         //This is the format of the folder when the backup is executed.
         public static readonly string BackupFolderSetup = Settings.Default.AutoBackupLocation + "\\" + "Backup" + DateTime.Now.ToString("yyyyMMddHHmm");
+        //How many slots the game has.
+        public const int Saveslots = 16;
         //Interger used as a check for the backup system (Normal Mode only).
         //If this interger is higher than 0, issue a backup.
         public static int CountChanges;
         //Reserved variable to run the game. Especially when arguments are added.
         public static readonly Process GameProcess = new Process();
+        //Reserved variables for the DiskCheck.
+        public static bool IsDriveReady;
+        public static bool SpaceError;
+        public static bool PermissionError;
     }
 }

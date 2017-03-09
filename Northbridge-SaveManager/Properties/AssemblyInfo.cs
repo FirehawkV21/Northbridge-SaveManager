@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AceOfAces")]
 [assembly: AssemblyProduct("Nothbridge Subsystem")]
-[assembly: AssemblyCopyright("Copyright ©  2016 AceOfAces.")]
+[assembly: AssemblyCopyright("Copyright ©  2016-Present AceOfAces.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.4.0.16244")]
-[assembly: AssemblyFileVersion("1.4.0.16244")]
+[assembly: AssemblyVersion("1.4.1.17068")]
+[assembly: AssemblyFileVersion("1.4.1.17068")]
 [assembly: NeutralResourcesLanguage("en")]
 
