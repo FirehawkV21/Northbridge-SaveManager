@@ -257,6 +257,7 @@ namespace NorthbridgeSubSystem
             }
             AutoBackupCheckbox.Checked = Settings.Default.AutoBackupEnabled;
             LocationBackup.Text = Settings.Default.AutoBackupLocation;
+            StorageToolkit.DiskCheck(CommonVariables.SaveLocation, false);
             if (!Directory.Exists(CommonVariables.SaveLocation))
             {
                 Directory.CreateDirectory(CommonVariables.SaveLocation);
@@ -300,6 +301,19 @@ namespace NorthbridgeSubSystem
                 DeleteBackupButton.Enabled = false;
                 EnableSnapshotCheckbox.Enabled = false;
             }
+            if (!CommonVariables.IsDriveReady)
+                MessageBox.Show(@"The disk isn't ready. You won't be able to import saves.", @"Disk isn't ready", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (CommonVariables.PermissionError)
+                MessageBox.Show(
+                    @"Cannot access the save folder. You won't be able to import saves.", @"Permission Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            if (CommonVariables.SpaceError)
+                MessageBox.Show(@"Not enough space to save. Please free up some space.",
+                    @"The free space is too low!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            ImportButton.Enabled = CommonVariables.IsDriveReady && !CommonVariables.SpaceError &&
+                                   !CommonVariables.PermissionError;
+            SlotSelectCheckBox.Enabled = CommonVariables.IsDriveReady && !CommonVariables.SpaceError &&
+                                   !CommonVariables.PermissionError;
         }
 
         private void SelectiveExportButton_Click(object sender, EventArgs e)
