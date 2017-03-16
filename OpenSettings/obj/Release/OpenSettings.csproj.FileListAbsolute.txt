@@ -14,3 +14,4 @@ C:\Users\Dimitris\Source\Repos\Northbridge-SaveManager\OpenSettings\obj\Release\
 C:\Users\Dimitris\Source\Repos\Northbridge-SaveManager\OpenSettings\obj\Release\OpenSettings.csproj.GenerateResource.Cache
 C:\Users\Dimitris\Source\Repos\Northbridge-SaveManager\OpenSettings\obj\Release\OpenSettings.exe
 C:\Users\Dimitris\Source\Repos\Northbridge-SaveManager\OpenSettings\obj\Release\OpenSettings.pdb
+C:\Users\Dimitris\Source\Repos\Northbridge-SaveManager\OpenSettings\obj\Release\OpenSettings.csprojResolveAssemblyReference.cache

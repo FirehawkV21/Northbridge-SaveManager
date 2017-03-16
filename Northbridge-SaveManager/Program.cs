@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NorthbridgeSubSystem;
 
-namespace WindowsFormsApplication2
+namespace NorthbridgeSubSystem
 {
     static class Program
     {
@@ -13,7 +9,7 @@ namespace WindowsFormsApplication2
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

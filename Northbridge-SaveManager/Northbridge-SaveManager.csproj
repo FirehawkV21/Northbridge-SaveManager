@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>WindowsFormsApplication2.Program</StartupObject>
+    <StartupObject>NorthbridgeSubSystem.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>

@@ -5,13 +5,6 @@ namespace NorthbridgeSubSystem
 {
     public partial class AuthBrowser : Form
     {
-        private string AccessToken
-        {
-            get { return _accessToken; }
-            set { _accessToken = value; }
-        }
-        private string _accessToken = string.Empty;
-
         private const string Scope = "wl.skydrive_update";
 
         // Remember to change this to your ClientID, this one will be
@@ -37,9 +30,6 @@ namespace NorthbridgeSubSystem
            WebBrowserDocumentCompletedEventArgs e)
         {
             if (!e.Url.AbsoluteUri.Contains("#access_token=")) return;
-            var x = e.Url.AbsoluteUri.Split(new[]
-            { "#access_token" }, StringSplitOptions.None);
-            AccessToken = x[1].Split(new[] { '&' })[0];
             _closeTimer = new Timer { Interval = 500 };
             _closeTimer.Tick += CloseTimerTick;
             _closeTimer.Enabled = true;

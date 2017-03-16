@@ -283,7 +283,7 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>splitContainer2.Panel1</value>
+    <value><![CDATA[splitContainer2.Panel1]]></value>
   </data>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -482,7 +482,7 @@ CAREFUL! This is irreversible.</value>
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
-    <value>splitContainer2.Panel2</value>
+    <value><![CDATA[splitContainer2.Panel2]]></value>
   </data>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -515,7 +515,7 @@ CAREFUL! This is irreversible.</value>
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value><![CDATA[splitContainer1.Panel1]]></value>
   </data>
   <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -817,7 +817,7 @@ It is recommended that is used in conjuction with a cloud storage service (for e
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value><![CDATA[splitContainer1.Panel1]]></value>
   </data>
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1001,7 +1001,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value><![CDATA[splitContainer1.Panel1]]></value>
   </data>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1178,7 +1178,7 @@ Use this ONLY if you need it (for example, all your save files are corrupt).</va
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value><![CDATA[splitContainer1.Panel1]]></value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1383,7 +1383,7 @@ WARNING! This will replace the save file with the same name.</value>
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value><![CDATA[splitContainer1.Panel1]]></value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -1422,7 +1422,7 @@ WARNING! This will replace the save file with the same name.</value>
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;closeButton.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+    <value><![CDATA[splitContainer1.Panel2]]></value>
   </data>
   <data name="&gt;&gt;closeButton.ZOrder" xml:space="preserve">
     <value>0</value>
