@@ -86,12 +86,16 @@ namespace NorthbridgeSubSystem
         private void LocationBackup_TextChanged(object sender, EventArgs e)
         {
             RestoreFolderPicker.SelectedPath = Settings.Default.AutoBackupLocation;
-            Settings.Default.AutoBackupLocation = LocationBackup.Text;
+            //Commented this line as it is redundant (The text box is tied to the LocationBackup setting).
+            //Un-comment that line below if needed.
+            //Settings.Default.AutoBackupLocation = LocationBackup.Text;
             Settings.Default.Save();
         }
 
         private void AutoBackupCheckbox_CheckedChanged(object sender, EventArgs e)
         {
+            //Commented this line as well as it's redundant (the checkbox is tied to the AutoBackupEnabled setting).
+            //Un-comment that line below if needed.
             //Settings.Default.AutoBackupEnabled = AutoBackupCheckbox.Enabled;
             BrowseButton.Enabled = AutoBackupCheckbox.Enabled;
             LocationBackup.Enabled = AutoBackupCheckbox.Enabled;

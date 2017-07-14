@@ -31,24 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.ImportFilePicker = new System.Windows.Forms.OpenFileDialog();
-            this.ExportFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.BackupFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
-            this.RestoreFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.EnableSnapshotCheckbox = new System.Windows.Forms.CheckBox();
-            this.BackupFailedLabel = new System.Windows.Forms.Label();
-            this.BackupCompleteLabel = new System.Windows.Forms.Label();
-            this.TestBackupButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.BrowseButton = new System.Windows.Forms.Button();
-            this.LocationBackup = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.AutoBackupCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DeleteFailedLabel = new System.Windows.Forms.Label();
             this.DeleteCompleteLabel = new System.Windows.Forms.Label();
@@ -68,38 +52,54 @@
             this.ImportCompleteLabel = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.RestoreFailedLabel = new System.Windows.Forms.Label();
+            this.RestoreCompleteLabel = new System.Windows.Forms.Label();
+            this.RestoreBackupButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.DeleteBackupsFailed = new System.Windows.Forms.Label();
             this.BackupDeleteCompleteLabel = new System.Windows.Forms.Label();
             this.DeleteBackupCheckBox = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DeleteBackupButton = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.EnableSnapshotCheckbox = new System.Windows.Forms.CheckBox();
+            this.BackupFailedLabel = new System.Windows.Forms.Label();
+            this.BackupCompleteLabel = new System.Windows.Forms.Label();
+            this.TestBackupButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.BrowseButton = new System.Windows.Forms.Button();
+            this.LocationBackup = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AutoBackupCheckbox = new System.Windows.Forms.CheckBox();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.ImportFilePicker = new System.Windows.Forms.OpenFileDialog();
+            this.ExportFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.BackupFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
+            this.RestoreFolderPicker = new System.Windows.Forms.FolderBrowserDialog();
             this.InfoTip = new System.Windows.Forms.ToolTip(this.components);
             this.ErrorTip = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.RestoreFailedLabel = new System.Windows.Forms.Label();
-            this.RestoreCompleteLabel = new System.Windows.Forms.Label();
-            this.RestoreBackupButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -114,26 +114,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.closeButton);
-            // 
-            // closeButton
-            // 
-            resources.ApplyResources(this.closeButton, "closeButton");
-            this.closeButton.Name = "closeButton";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // ImportFilePicker
-            // 
-            this.ImportFilePicker.FileName = "openFileDialog1";
-            resources.ApplyResources(this.ImportFilePicker, "ImportFilePicker");
-            // 
-            // BackupFolderPicker
-            // 
-            resources.ApplyResources(this.BackupFolderPicker, "BackupFolderPicker");
-            // 
-            // RestoreFolderPicker
-            // 
-            resources.ApplyResources(this.RestoreFolderPicker, "RestoreFolderPicker");
             // 
             // tabControl1
             // 
@@ -151,91 +131,6 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.splitContainer2);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.EnableSnapshotCheckbox);
-            this.groupBox4.Controls.Add(this.BackupFailedLabel);
-            this.groupBox4.Controls.Add(this.BackupCompleteLabel);
-            this.groupBox4.Controls.Add(this.TestBackupButton);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.BrowseButton);
-            this.groupBox4.Controls.Add(this.LocationBackup);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.AutoBackupCheckbox);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.TabStop = false;
-            // 
-            // EnableSnapshotCheckbox
-            // 
-            resources.ApplyResources(this.EnableSnapshotCheckbox, "EnableSnapshotCheckbox");
-            this.EnableSnapshotCheckbox.Checked = global::NorthbridgeSubSystem.Properties.Settings.Default.SingleBackupMode;
-            this.EnableSnapshotCheckbox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::NorthbridgeSubSystem.Properties.Settings.Default, "SingleBackupMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.EnableSnapshotCheckbox.Name = "EnableSnapshotCheckbox";
-            this.InfoTip.SetToolTip(this.EnableSnapshotCheckbox, resources.GetString("EnableSnapshotCheckbox.ToolTip"));
-            this.EnableSnapshotCheckbox.UseVisualStyleBackColor = true;
-            this.EnableSnapshotCheckbox.CheckedChanged += new System.EventHandler(this.EnableSnapshotCheckbox_CheckedChanged);
-            // 
-            // BackupFailedLabel
-            // 
-            resources.ApplyResources(this.BackupFailedLabel, "BackupFailedLabel");
-            this.BackupFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.BackupFailedLabel.Name = "BackupFailedLabel";
-            // 
-            // BackupCompleteLabel
-            // 
-            resources.ApplyResources(this.BackupCompleteLabel, "BackupCompleteLabel");
-            this.BackupCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.BackupCompleteLabel.Name = "BackupCompleteLabel";
-            // 
-            // TestBackupButton
-            // 
-            resources.ApplyResources(this.TestBackupButton, "TestBackupButton");
-            this.TestBackupButton.Name = "TestBackupButton";
-            this.TestBackupButton.UseVisualStyleBackColor = true;
-            this.TestBackupButton.Click += new System.EventHandler(this.TestBackupButton_Click);
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
-            // BrowseButton
-            // 
-            resources.ApplyResources(this.BrowseButton, "BrowseButton");
-            this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.UseVisualStyleBackColor = true;
-            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
-            // 
-            // LocationBackup
-            // 
-            resources.ApplyResources(this.LocationBackup, "LocationBackup");
-            this.LocationBackup.Name = "LocationBackup";
-            this.LocationBackup.TextChanged += new System.EventHandler(this.LocationBackup_TextChanged);
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // AutoBackupCheckbox
-            // 
-            resources.ApplyResources(this.AutoBackupCheckbox, "AutoBackupCheckbox");
-            this.AutoBackupCheckbox.Checked = global::NorthbridgeSubSystem.Properties.Settings.Default.AutoBackupEnabled;
-            this.AutoBackupCheckbox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::NorthbridgeSubSystem.Properties.Settings.Default, "AutoBackupEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.AutoBackupCheckbox.Name = "AutoBackupCheckbox";
-            this.InfoTip.SetToolTip(this.AutoBackupCheckbox, resources.GetString("AutoBackupCheckbox.ToolTip"));
-            this.AutoBackupCheckbox.UseVisualStyleBackColor = true;
-            this.AutoBackupCheckbox.CheckedChanged += new System.EventHandler(this.AutoBackupCheckbox_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -384,6 +279,14 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.splitContainer2);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // splitContainer2
             // 
             resources.ApplyResources(this.splitContainer2, "splitContainer2");
@@ -396,6 +299,40 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox6);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.RestoreFailedLabel);
+            this.groupBox5.Controls.Add(this.RestoreCompleteLabel);
+            this.groupBox5.Controls.Add(this.RestoreBackupButton);
+            this.groupBox5.Controls.Add(this.label8);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
+            // RestoreFailedLabel
+            // 
+            resources.ApplyResources(this.RestoreFailedLabel, "RestoreFailedLabel");
+            this.RestoreFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.RestoreFailedLabel.Name = "RestoreFailedLabel";
+            // 
+            // RestoreCompleteLabel
+            // 
+            resources.ApplyResources(this.RestoreCompleteLabel, "RestoreCompleteLabel");
+            this.RestoreCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
+            this.RestoreCompleteLabel.Name = "RestoreCompleteLabel";
+            // 
+            // RestoreBackupButton
+            // 
+            resources.ApplyResources(this.RestoreBackupButton, "RestoreBackupButton");
+            this.RestoreBackupButton.Name = "RestoreBackupButton";
+            this.RestoreBackupButton.UseVisualStyleBackColor = true;
+            this.RestoreBackupButton.Click += new System.EventHandler(this.RestoreBackupButton_Click);
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
             // 
             // groupBox6
             // 
@@ -439,6 +376,105 @@
             this.DeleteBackupButton.UseVisualStyleBackColor = true;
             this.DeleteBackupButton.Click += new System.EventHandler(this.DeleteBackupButton_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.EnableSnapshotCheckbox);
+            this.groupBox4.Controls.Add(this.BackupFailedLabel);
+            this.groupBox4.Controls.Add(this.BackupCompleteLabel);
+            this.groupBox4.Controls.Add(this.TestBackupButton);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.BrowseButton);
+            this.groupBox4.Controls.Add(this.LocationBackup);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.AutoBackupCheckbox);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.TabStop = false;
+            // 
+            // EnableSnapshotCheckbox
+            // 
+            resources.ApplyResources(this.EnableSnapshotCheckbox, "EnableSnapshotCheckbox");
+            this.EnableSnapshotCheckbox.Checked = global::NorthbridgeSubSystem.Properties.Settings.Default.SingleBackupMode;
+            this.EnableSnapshotCheckbox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::NorthbridgeSubSystem.Properties.Settings.Default, "SingleBackupMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.EnableSnapshotCheckbox.Name = "EnableSnapshotCheckbox";
+            this.InfoTip.SetToolTip(this.EnableSnapshotCheckbox, resources.GetString("EnableSnapshotCheckbox.ToolTip"));
+            this.EnableSnapshotCheckbox.UseVisualStyleBackColor = true;
+            this.EnableSnapshotCheckbox.CheckedChanged += new System.EventHandler(this.EnableSnapshotCheckbox_CheckedChanged);
+            // 
+            // BackupFailedLabel
+            // 
+            resources.ApplyResources(this.BackupFailedLabel, "BackupFailedLabel");
+            this.BackupFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.BackupFailedLabel.Name = "BackupFailedLabel";
+            // 
+            // BackupCompleteLabel
+            // 
+            resources.ApplyResources(this.BackupCompleteLabel, "BackupCompleteLabel");
+            this.BackupCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
+            this.BackupCompleteLabel.Name = "BackupCompleteLabel";
+            // 
+            // TestBackupButton
+            // 
+            resources.ApplyResources(this.TestBackupButton, "TestBackupButton");
+            this.TestBackupButton.Name = "TestBackupButton";
+            this.TestBackupButton.UseVisualStyleBackColor = true;
+            this.TestBackupButton.Click += new System.EventHandler(this.TestBackupButton_Click);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // BrowseButton
+            // 
+            resources.ApplyResources(this.BrowseButton, "BrowseButton");
+            this.BrowseButton.Name = "BrowseButton";
+            this.BrowseButton.UseVisualStyleBackColor = true;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
+            // LocationBackup
+            // 
+            this.LocationBackup.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::NorthbridgeSubSystem.Properties.Settings.Default, "AutoBackupLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            resources.ApplyResources(this.LocationBackup, "LocationBackup");
+            this.LocationBackup.Name = "LocationBackup";
+            this.LocationBackup.Text = global::NorthbridgeSubSystem.Properties.Settings.Default.AutoBackupLocation;
+            this.LocationBackup.TextChanged += new System.EventHandler(this.LocationBackup_TextChanged);
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // AutoBackupCheckbox
+            // 
+            resources.ApplyResources(this.AutoBackupCheckbox, "AutoBackupCheckbox");
+            this.AutoBackupCheckbox.Checked = global::NorthbridgeSubSystem.Properties.Settings.Default.AutoBackupEnabled;
+            this.AutoBackupCheckbox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::NorthbridgeSubSystem.Properties.Settings.Default, "AutoBackupEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.AutoBackupCheckbox.Name = "AutoBackupCheckbox";
+            this.InfoTip.SetToolTip(this.AutoBackupCheckbox, resources.GetString("AutoBackupCheckbox.ToolTip"));
+            this.AutoBackupCheckbox.UseVisualStyleBackColor = true;
+            this.AutoBackupCheckbox.CheckedChanged += new System.EventHandler(this.AutoBackupCheckbox_CheckedChanged);
+            // 
+            // closeButton
+            // 
+            resources.ApplyResources(this.closeButton, "closeButton");
+            this.closeButton.Name = "closeButton";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // ImportFilePicker
+            // 
+            this.ImportFilePicker.FileName = "openFileDialog1";
+            resources.ApplyResources(this.ImportFilePicker, "ImportFilePicker");
+            // 
+            // BackupFolderPicker
+            // 
+            resources.ApplyResources(this.BackupFolderPicker, "BackupFolderPicker");
+            // 
+            // RestoreFolderPicker
+            // 
+            resources.ApplyResources(this.RestoreFolderPicker, "RestoreFolderPicker");
+            // 
             // InfoTip
             // 
             this.InfoTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -447,40 +483,6 @@
             // ErrorTip
             // 
             this.ErrorTip.ToolTipTitle = "Error";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.RestoreFailedLabel);
-            this.groupBox5.Controls.Add(this.RestoreCompleteLabel);
-            this.groupBox5.Controls.Add(this.RestoreBackupButton);
-            this.groupBox5.Controls.Add(this.label8);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.TabStop = false;
-            // 
-            // RestoreFailedLabel
-            // 
-            resources.ApplyResources(this.RestoreFailedLabel, "RestoreFailedLabel");
-            this.RestoreFailedLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.RestoreFailedLabel.Name = "RestoreFailedLabel";
-            // 
-            // RestoreCompleteLabel
-            // 
-            resources.ApplyResources(this.RestoreCompleteLabel, "RestoreCompleteLabel");
-            this.RestoreCompleteLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.RestoreCompleteLabel.Name = "RestoreCompleteLabel";
-            // 
-            // RestoreBackupButton
-            // 
-            resources.ApplyResources(this.RestoreBackupButton, "RestoreBackupButton");
-            this.RestoreBackupButton.Name = "RestoreBackupButton";
-            this.RestoreBackupButton.UseVisualStyleBackColor = true;
-            this.RestoreBackupButton.Click += new System.EventHandler(this.RestoreBackupButton_Click);
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
             // 
             // BaseForm
             // 
@@ -500,9 +502,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -510,14 +509,17 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
