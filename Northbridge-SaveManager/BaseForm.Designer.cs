@@ -178,9 +178,12 @@
             // EnableSnapshotCheckbox
             // 
             resources.ApplyResources(this.EnableSnapshotCheckbox, "EnableSnapshotCheckbox");
+            this.EnableSnapshotCheckbox.Checked = global::NorthbridgeSubSystem.Properties.Settings.Default.SingleBackupMode;
+            this.EnableSnapshotCheckbox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::NorthbridgeSubSystem.Properties.Settings.Default, "SingleBackupMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.EnableSnapshotCheckbox.Name = "EnableSnapshotCheckbox";
             this.InfoTip.SetToolTip(this.EnableSnapshotCheckbox, resources.GetString("EnableSnapshotCheckbox.ToolTip"));
             this.EnableSnapshotCheckbox.UseVisualStyleBackColor = true;
+            this.EnableSnapshotCheckbox.CheckedChanged += new System.EventHandler(this.EnableSnapshotCheckbox_CheckedChanged);
             // 
             // BackupFailedLabel
             // 
@@ -227,6 +230,8 @@
             // AutoBackupCheckbox
             // 
             resources.ApplyResources(this.AutoBackupCheckbox, "AutoBackupCheckbox");
+            this.AutoBackupCheckbox.Checked = global::NorthbridgeSubSystem.Properties.Settings.Default.AutoBackupEnabled;
+            this.AutoBackupCheckbox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::NorthbridgeSubSystem.Properties.Settings.Default, "AutoBackupEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.AutoBackupCheckbox.Name = "AutoBackupCheckbox";
             this.InfoTip.SetToolTip(this.AutoBackupCheckbox, resources.GetString("AutoBackupCheckbox.ToolTip"));
             this.AutoBackupCheckbox.UseVisualStyleBackColor = true;

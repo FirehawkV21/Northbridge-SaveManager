@@ -92,7 +92,7 @@ namespace NorthbridgeSubSystem
 
         private void AutoBackupCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            Settings.Default.AutoBackupEnabled = AutoBackupCheckbox.Enabled;
+            //Settings.Default.AutoBackupEnabled = AutoBackupCheckbox.Enabled;
             BrowseButton.Enabled = AutoBackupCheckbox.Enabled;
             LocationBackup.Enabled = AutoBackupCheckbox.Enabled;
             RestoreBackupButton.Enabled = AutoBackupCheckbox.Enabled;
@@ -320,6 +320,11 @@ namespace NorthbridgeSubSystem
         {
             Form sExport = new ExportTool();
             sExport.Show();
+        }
+
+        private void EnableSnapshotCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.Save();
         }
     }
     }
