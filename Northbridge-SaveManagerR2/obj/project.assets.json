@@ -334,11 +334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\acemo\\source\\repos\\Northbridge-SaveManagerR2\\Northbridge-SaveManagerR2\\Northbridge-SaveManagerR2.csproj",
+      "projectUniqueName": "C:\\Users\\acemo\\source\\repos\\Northbridge-SaveManager\\Northbridge-SaveManager\\Northbridge-SaveManagerR2\\Northbridge-SaveManagerR2.csproj",
       "projectName": "Northbridge-SaveManagerR2",
-      "projectPath": "C:\\Users\\acemo\\source\\repos\\Northbridge-SaveManagerR2\\Northbridge-SaveManagerR2\\Northbridge-SaveManagerR2.csproj",
+      "projectPath": "C:\\Users\\acemo\\source\\repos\\Northbridge-SaveManager\\Northbridge-SaveManager\\Northbridge-SaveManagerR2\\Northbridge-SaveManagerR2.csproj",
       "packagesPath": "C:\\Users\\acemo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\acemo\\source\\repos\\Northbridge-SaveManagerR2\\Northbridge-SaveManagerR2\\obj\\",
+      "outputPath": "C:\\Users\\acemo\\source\\repos\\Northbridge-SaveManager\\Northbridge-SaveManager\\Northbridge-SaveManagerR2\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
