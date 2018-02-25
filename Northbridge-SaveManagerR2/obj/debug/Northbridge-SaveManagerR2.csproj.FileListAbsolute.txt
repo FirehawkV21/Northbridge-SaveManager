@@ -1,0 +1,15 @@
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\bin\Debug\Northbridge-SaveManagerR2.exe.config
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\bin\Debug\Northbridge-SaveManagerR2.exe
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\bin\Debug\Northbridge-SaveManagerR2.pdb
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2.csprojResolveAssemblyReference.cache
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\MainWindow.g.cs
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\App.g.cs
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2_MarkupCompile.cache
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2_MarkupCompile.lref
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\MainWindow.baml
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2.g.resources
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge_SaveManagerR2.Properties.Resources.resources
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2.csproj.GenerateResource.Cache
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2.csproj.CoreCompileInputs.cache
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2.exe
+C:\Users\Dimitris\source\repos\Northbridge-SaveManagerR2\Northbridge-SaveManagerR2\obj\Debug\Northbridge-SaveManagerR2.pdb
